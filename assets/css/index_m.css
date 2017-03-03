@@ -1,0 +1,42 @@
+
+/*header*/
+.head-left,.head-right{
+  margin:10px 5px;
+}
+.head-right{
+  margin:10px 5px;
+}
+#menuWrapper{
+  right: 0;
+  height:200px;
+}
+/*end header*/
+
+#main{
+  margin:0 1%;
+  width: 98%;
+}
+.block{
+  padding: 12px;
+}
+/*search*/
+#searchInput{
+  width:80%;
+}
+/*end search*/
+
+
+/*footer*/
+#footer{
+  padding:10px 0;
+}
+.wechat-img{
+  left: -30px;
+}
+#footerLink{
+  font-size:12px;
+}
+/*end footer*/
+.part{
+  width:96%;
+}

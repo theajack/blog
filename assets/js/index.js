@@ -1,0 +1,24 @@
+J.load(function(){
+  if(J.width()<1000){
+    Jet.jump("index_m.html");
+    J.body().data("turn",true);
+  }
+});
+J.ready(function(){
+  if(J.body().data("turn")!=true){
+    init();
+    initFooterPos();
+  }
+})
+function initFooterPos(){
+  if(J.width()<1000){
+    Jet.jump("index_m.html");
+  }else{
+    if(J.height()-J.id("header").hei()-J.id("footer").hei()>J.id("content").hei()){
+      J.id("footer").addClass("bottom");
+    }else{
+      J.id("footer").removeClass("bottom");
+    }
+  }
+}
+window.onresize=initFooterPos;
