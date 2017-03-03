@@ -65,11 +65,11 @@ function init(){
     if(this.data("spin")!=true){
       this.spin();
       this.data("spin",true);
-      J.id("menuWrapper").fadeIn(null,"fast");
+      //J.id("menuWrapper").fadeIn(null,"fast");
     }else{
-      //this.stopSpin();
+      this.stopSpin();
       this.data("spin",false);
-      J.id("menuWrapper").hide();
+      //J.id("menuWrapper").hide();
     }
   })
 }
