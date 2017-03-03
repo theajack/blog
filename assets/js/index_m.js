@@ -13,11 +13,11 @@ function checkWidth(){
 }
 function setSpin(obj){
   if(obj.data("spin")!=true){
-    obj.spin(null,2);
+    //obj.spin(null,2);
     obj.data("spin",true);
     J.id("menuWrapper").fadeIn(null,"fast");
   }else{
-    //obj.stopSpin(); //stopSpin 移动端出问题
+    //obj.stopSpin(); //spin stopSpin 移动端出问题
     obj.data("spin",false);
     J.id("menuWrapper").fadeOut(null,"fast");
   }
