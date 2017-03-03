@@ -61,16 +61,17 @@ function init(){
     "onmouseover":"J.class('wechat-img').fadeIn()",
     "onmouseleave":"J.class('wechat-img').fadeOut()"
   });
-  J.id("set").event("onclick",function(){
-    if(this.data("spin")!=true){
-      this.spin();
-      this.data("spin",true);
-      //J.id("menuWrapper").fadeIn(null,"fast");
-    }else{
-      this.stopSpin();
-      this.data("spin",false);
-      //J.id("menuWrapper").hide();
-    }
+  var set=J.id("set");
+  set.event("onclick",function(){
+    if(set.data("spin")!=true){
+    set.spin();
+    set.data("spin",true);
+    J.id("menuWrapper").fadeIn(null,"fast");
+  }else{
+    set.stopSpin();
+    set.data("spin",false);
+    J.id("menuWrapper").fadeOut(null,"fast");
+  }
   })
 }
 
