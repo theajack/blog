@@ -21,4 +21,15 @@ function initFooterPos(){
     }
   }
 }
+function setSpin(obj){
+  if(obj.data("spin")!=true){
+    obj.spin();
+    obj.data("spin",true);
+    J.id("menuWrapper").fadeIn(null,"fast");
+  }else{
+    obj.stopSpin();
+    obj.data("spin",false);
+    J.id("menuWrapper").fadeOut(null,"fast");
+  }
+}
 window.onresize=initFooterPos;
