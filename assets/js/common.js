@@ -69,7 +69,7 @@ function init(){
     }else{
       this.stopSpin();
       this.data("spin",false);
-      J.id("menuWrapper").fadeOut(null,"fast");
+      J.id("menuWrapper").hide();
     }
   })
 }
