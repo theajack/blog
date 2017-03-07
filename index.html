@@ -2,110 +2,18 @@
 <html>
   <head>
     <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="keywords" content="validation,validate,css animation,js,jetter,jQuery,js library">  
-    <meta name="description" content="js library for form operate and validate,select HTMLElement like jQuery">  
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=8">
-
-    <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
     <title>Blog theajack</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/glyphicon.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/index.css"/>
   </head>
   <body>
-    <div id="header">
-      <div class="part">
-        <div id="logo">
-          <img src="assets/images/logo.png" onclick="Jet.open('http://www.theajack.site/')"/>
-        </div>
-        <div class="head-left" onclick="Jet.open('http://www.theajack.site/jetterjs/')">
-          Jetter.js
-        </div>
-        <div class="head-left">
-          社区
-        </div>
-        <div class="head-left">
-          留言板
-        </div>
-        
-        <div class="head-right">
-          <span class="glyphicon glyphicon-cog" id="set"></span>
-        </div>
-        <div class="head-right">
-          注册
-        </div>
-        <div class="head-right">
-          <span class="glyphicon glyphicon-user"></span>
-          登录
-        </div>
-        
-        <div id="menuWrapper">
-          <div class="menu-triangle"></div>
-          <div class="menu-item">个人中心</div>
-          <div class="menu-item">退出登录</div>
-        </div>
-      </div>
-    </div>
-    <div id="content" class="part clearfix">
-      <div id="main">
-        <div id="top" class="block">
-        </div>
-        <div id="list" class="block">
-        </div>
-      </div>
-      <div id="side">
-        <div id="search" class="block">
-          <input type="text" id="searchInput" placeholder="查找"/>
-          <span type="text" id="searchBtn" class="glyphicon glyphicon-search"></span>
-        </div>
-        <div id="hot" class="block">
-          <div class="block-title">最近热帖</div>
-          <div class="link" onclick="Jet.open('https://github.com/theajack')">GitHub</div>
-          <div class="link" onclick="Jet.open('https://github.com/theajack')">GitHub</div>
-          <div class="link" onclick="Jet.open('https://github.com/theajack')">GitHub</div>
-        </div>
-        <div id="link" class="block clearfix">
-          <div class="block-title">友情链接</div>
-          <img class="link-img" src="assets/images/jetterjs.png" onclick="Jet.open('http://www.theajack.site/jetterjs/')"/>
-          <img class="link-img bg" src="assets/images/theajack.png" onclick="Jet.open('http://www.theajack.site/')"/>
-          <img class="link-img" src="assets/images/bikeshare.png" onclick="Jet.open('http://bikeshare.imwork.net')"/>
-          <span class="link-text">Jetter.js</span>
-          <span class="link-text">个人主页</span>
-          <span class="link-text">人人单车</span>
-          <img class="link-img" src="assets/images/app_2048plus.png" onclick="Jet.open('http://a.app.qq.com/o/simple.jsp?pkgname=com.main.theajack')"/>
-          <img class="link-img" src="assets/images/app_stonefinanace.png" onclick="Jet.open('http://a.app.qq.com/o/simple.jsp?pkgname=com.example.stonefinance')"/>
-          <img class="link-img" src="assets/images/app_breakdefence.png" onclick="Jet.show('In developing')"/>
-          <span class="link-text">2048 plus</span>
-          <span class="link-text">石头理财</span>
-          <span class="link-text">突破防线</span>
-          <img class="link-img" src="assets/images/maze.png" onclick="Jet.open('http://www.theajack.site/maze/')"/>
-          <img class="link-img" src="assets/images/bombbattle.png" onclick="Jet.open('http://www.theajack.site/bombbattle/')"/>
-          <img class="link-img bg" src="assets/images/bike query.png" onclick="Jet.open('http://www.theajack.site/bike/')"/>
-          <span class="link-text">迷宫</span>
-          <span class="link-text">炸弹大作战</span>
-          <span class="link-text">人人纯净版</span>
-        </div>
-      </div>
-    </div>
-    <div id="footer">
-      <div id="footerLink">
-        <span class="link" onclick="Jet.open('https://github.com/theajack')">GitHub</span>
-        <span class="split-icon">|</span>
-        <span class="link" onclick="Jet.open('http://weibo.com/p/1005055304330572/home?from=page_100505&mod=TAB&is_all=1')">Sina Micro-blog</span>
-        <span class="split-icon">|</span>
-        <span class="wechat-public">WeChat Official Accounts<img class="wechat-img" src="assets/images/wechat_qrcode.jpg"/></span>
-        <span class="split-icon">|</span>
-        Email:theajack@163.com
-      </div>
-      <div id="copyright">
-        <span class="glyphicon glyphicon-copyright-mark"></span> 2016 TheaJack All rights reserved
-      </div>
-    </div>
-    <script src="assets/js/jetter.min.js"></script>
-    <script src="assets/js/common.js"></script>
-    <script src="assets/js/index.js"></script>
+  <script src="assets/js/jetter.min.js"></script>
+  <script>
+  J.load(function(){
+    if(J.width()<1000){
+      Jet.jump("index_m.html");
+    }else{
+      Jet.jump("index_p.html");
+    }
+  });
+  </script>
   </body>
 </html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="keywords" content="validation,validate,css animation,js,jetter,jQuery,js library">  
+    <meta name="description" content="js library for form operate and validate,select HTMLElement like jQuery">  
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+    <title>Blog theajack</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/glyphicon.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/index_p.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/article.css"/>
+  </head>
+  <body>
+    <div id="header">
+      <div class="part">
+        <div id="logo">
+          <img src="assets/images/logo.png" onclick="Jet.jump('index.html')"/>
+        </div>
+        <div class="head-left d-hide" onclick="Jet.open('http://www.theajack.site/jetterjs/')">
+          Jetter.js
+        </div>
+        <div class="head-left d-hide">
+          社区
+        </div>
+        <div class="head-left d-hide">
+          留言板
+        </div>
+        
+        <div class="head-right" id="setWrapper">
+          <span class="glyphicon glyphicon-cog" id="set"></span>
+        </div>
+        <div class="head-right d-hide">
+          注册
+        </div>
+        <div class="head-right">
+          <span class="glyphicon glyphicon-user"></span>
+          登录
+        </div>
+        
+        <div id="menuWrapper">
+          <div class="menu-triangle"></div>
+          <div class="menu-item">个人中心</div>
+          <div class="menu-item d-show">注册</div>
+          <div class="menu-item d-show">社区</div>
+          <div class="menu-item d-show">留言板</div>
+          <div class="menu-item">退出登录</div>
+        </div>
+      </div>
+    </div>
+    <div id="content" class="part clearfix">
+      <div class="block">
+        <div id="title">这是一篇博客aaaa这是一篇博客aaa这是一篇博客aaa这是一篇博客aaa</div>
+        <div class="i-info clearfix">
+          <div class=" ii-block darker">
+            <span class=" glyphicon glyphicon-eject"></span>
+            <span>置顶</span>
+          </div>
+          <div class=" ii-block">
+            <span class=" glyphicon glyphicon-thumbs-up"></span>
+            <span>200</span>
+          </div>
+          <div class=" ii-block">
+            <span class=" glyphicon glyphicon-comment"></span>
+            <span>200</span>
+          </div>
+          <div class=" ii-block">
+            <span class=" glyphicon glyphicon-eye-open"></span>
+            <span>200</span>
+          </div>
+          <div class="ii-block author">
+            <span class=" glyphicon glyphicon-user"></span>
+            <span>theajack</span>
+          </div>
+          <div class="ii-block time">
+            <span class=" glyphicon glyphicon-calendar"></span>
+            <span>2017-03-02 10:10</span>
+          </div>
+        </div>
+      </div>
+      <div id="text" class="block">
+        <div class="section">这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa</div>
+        <div class="section">这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa</div>
+        <div class="image"><img src="assets/images/logo.png"/></div>
+        <div class="section">这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa</div>
+        <div class="code">
+          <pre>
+&lt;div class="ii-block time"&gt;
+&lt;span class=" glyphicon glyphicon-calendar"&gt;&lt;/span&gt;
+&lt;span&gt;2017-03-02 10:10&lt;/span&gt;
+&lt;/div&gt;
+J.ready(function(){
+  init();
+  initFooterPos();
+})
+          </pre>
+        </div>
+        <div class="section">这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa</div>
+        
+        <div id="prise"><span class="glyphicon glyphicon-thumbs-up"></span></div>
+      </div>
+  
+      
+      <div id="comment" class="block">
+        <div class="block-title">评论</div>
+        <div class="comment-toolbox clearfix">
+          <div class="comment-tool"><img src="assets/images/face.png"/></div>
+          <div class="face-box" data-aim="commentArea"></div>
+          <div class="comment-tool"><img src="assets/images/link.png"/></div>
+          <div class="comment-tool forbid"><img src="assets/images/image.png"/></div>
+          <div class="comment-tool right button">提交</div>
+        </div>
+        <div contenteditable="true" id="commentArea" class="comment"><a href="http://www.baidu.com">百度</a><img class="rabbit" src="assets/images/rabbit/rabbit (1).gif"/></div>
+      </div>
+      
+      <div id="commentList" class="block">
+        <div class="block-title">评论列表</div>
+        <div class="comment-item">
+          <div class="c-user"></div>
+          <div class="c-content"></div>
+        </div>
+      </div>
+  
+      <div id="hot" class="block">
+        <div class="block-title">最近热帖</div>
+        <span class="link" onclick="Jet.open('https://github.com/theajack')">GitHub</span>
+        <span class="link" onclick="Jet.open('https://github.com/theajack')">GitHub</span>
+        <span class="link" onclick="Jet.open('https://github.com/theajack')">GitHub</span>
+      </div>
+      <div id="link" class="block ">
+        <div class="block-title">友情链接</div>
+        <span class="link" onclick="Jet.open('http://www.theajack.site/jetterjs/')">Jetter.js</span>
+        <span class="link" onclick="Jet.open('http://www.theajack.site/')">个人主页</span>
+        <span class="link" onclick="Jet.open('http://bikeshare.imwork.net')">人人单车</span>
+        <span class="link" onclick="Jet.open('http://a.app.qq.com/o/simple.jsp?pkgname=com.main.theajack'">2048 plus</span>
+        <span class="link" onclick="Jet.open('http://a.app.qq.com/o/simple.jsp?pkgname=com.example.stonefinance')">石头理财</span>
+        <span class="link" onclick="Jet.show('In developing')">突破防线</span>
+        <span class="link" onclick="Jet.open('http://www.theajack.site/maze/'">迷宫</span>
+        <span class="link" onclick="Jet.open('http://www.theajack.site/bombbattle/')">炸弹大作战</span>
+        <span class="link" onclick="Jet.open('http://www.theajack.site/bike/')">人人单车纯净版</span>
+      </div>
+      
+    </div>
+    <div id="footer">
+      <div id="footerLink">
+        <span class="link" onclick="Jet.open('https://github.com/theajack')">GitHub</span>
+        <span class="split-icon">|</span>
+        <span class="link" onclick="Jet.open('http://weibo.com/p/1005055304330572/home?from=page_100505&mod=TAB&is_all=1')">Sina Micro-blog</span>
+        <span class="split-icon">|</span>
+        
+        <span class="wechat-public d-hide">WeChat Official Accounts<img class="wechat-img" src="assets/images/wechat_qrcode.jpg"/></span>
+        <span class="split-icon d-hide">|</span>
+        
+        Email:theajack@qq.com
+        <div><span class="wechat-public d-show">WeChat Official Accounts<img class="wechat-img" src="assets/images/wechat_qrcode.jpg"/></span></div>
+      </div>
+      <div id="copyright">
+        <span class="glyphicon glyphicon-copyright-mark"></span> 2016 TheaJack All rights reserved
+      </div>
+    </div>
+    <script src="assets/js/jetter.min.js"></script>
+    <script src="assets/js/article.js"></script>
+  </body>
+</html>

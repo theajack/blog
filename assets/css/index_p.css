@@ -13,7 +13,7 @@
 }
 html,body{height:100%}
 body{
-  color: #555;
+  color: #444;
   font-family: "Open Sans",Arial,sans-serif;
   line-height: 22px;
   margin: 0;
@@ -57,6 +57,11 @@ body{
   height:40px;
   margin:10px 20px;
 }
+.head-right.user{
+  width:140px;
+  white-space:nowrap;
+  overflow:hidden;
+}
 .head-left:hover,.head-right:hover{
   border-bottom-color:#666;
   color:#666;
@@ -77,12 +82,11 @@ body{
 #menuWrapper{
   position: absolute;
   width: 100px;
-  height: 0;
+  height:auto;
   background-color:#888;
   right: 15px;
   top: 60px;
   border-radius:5px;
-  height:80px;
   z-index:10;
   display:none;
 }
@@ -151,7 +155,8 @@ body{
   padding-left:8px;
 }
 .ii-block{
-  width: 50px;
+  width: auto;
+  padding: 0 5px;
   float: left;
   text-align: center;
   background-color: #eee;
@@ -164,9 +169,6 @@ body{
 }
 .ii-block.darker{
   background-color: #bbb;
-}
-.ii-block.time{
-  width:130px;
 }
 .i-title,.i-info{
   border-left: 4px solid #888;

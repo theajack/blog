@@ -14,40 +14,52 @@
     <link rel="stylesheet" type="text/css" href="assets/css/glyphicon.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/index_p.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/index_m.css"/>
-  </head> 
+  </head>
   <body>
     <div id="header">
       <div class="part">
         <div id="logo">
           <img src="assets/images/logo.png" onclick="Jet.open('http://www.theajack.site/')"/>
         </div>
-        <div class="head-right" id="setWrapper">
+        <div class="head-left" onclick="Jet.open('http://www.theajack.site/jetterjs/')">
+          Jetter.js
+        </div>
+        <div class="head-left">
+          社区
+        </div>
+        <div class="head-left">
+          留言板
+        </div>
+        
+        <div class="head-right">
           <span class="glyphicon glyphicon-cog" id="set"></span>
+        </div>
+        <div class="head-right">
+          注册
         </div>
         <div class="head-right">
           <span class="glyphicon glyphicon-user"></span>
           登录
         </div>
+        
         <div id="menuWrapper">
           <div class="menu-triangle"></div>
           <div class="menu-item">个人中心</div>
-          <div class="menu-item">注册</div>
-          <div class="menu-item">社区</div>
-          <div class="menu-item">留言板</div>
           <div class="menu-item">退出登录</div>
         </div>
       </div>
     </div>
     <div id="content" class="part clearfix">
       <div id="main">
-        <div id="search" class="block">
-          <input type="text" id="searchInput" placeholder="查找"/>
-          <span type="text" id="searchBtn" class="glyphicon glyphicon-search"></span>
-        </div>
         <div id="top" class="block">
         </div>
         <div id="list" class="block">
+        </div>
+      </div>
+      <div id="side">
+        <div id="search" class="block">
+          <input type="text" id="searchInput" placeholder="查找"/>
+          <span type="text" id="searchBtn" class="glyphicon glyphicon-search"></span>
         </div>
         <div id="hot" class="block">
           <div class="block-title">最近热帖</div>
@@ -84,8 +96,9 @@
         <span class="split-icon">|</span>
         <span class="link" onclick="Jet.open('http://weibo.com/p/1005055304330572/home?from=page_100505&mod=TAB&is_all=1')">Sina Micro-blog</span>
         <span class="split-icon">|</span>
-        Email:theajack@qq.com
-        <div><span class="wechat-public">WeChat Official Accounts<img class="wechat-img" src="assets/images/wechat_qrcode.jpg"/></span></div>
+        <span class="wechat-public">WeChat Official Accounts<img class="wechat-img" src="assets/images/wechat_qrcode.jpg"/></span>
+        <span class="split-icon">|</span>
+        Email:theajack@163.com
       </div>
       <div id="copyright">
         <span class="glyphicon glyphicon-copyright-mark"></span> 2016 TheaJack All rights reserved
@@ -93,6 +106,6 @@
     </div>
     <script src="assets/js/jetter.min.js"></script>
     <script src="assets/js/common.js"></script>
-    <script src="assets/js/index_m.js"></script>
+    <script src="assets/js/index_p.js"></script>
   </body>
 </html>

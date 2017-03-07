@@ -76,11 +76,11 @@ function bindData(){
 		J.id("list").child(0).addClass("no-border");
 }
 function bindOneData(item){
-	var aitem=J.new("div.a-item[onclick=Jet.open('"+item.name+".html')]");
+	var aitem=J.new("div.a-item[onclick=Jet.jump('"+item.name+".html')]");
 		var title=J.new("div.i-title").html(item.title);
 		var info=J.new("div.i-info.clearfix");
 		info.append([
-			geneInfo(item.date,"ii-block time","calendar"),
+			geneInfo(item.date,"ii-block","calendar"),
 			geneInfo(item.watch,"ii-block","eye-open"),
 			geneInfo(item.comment,"ii-block","comment"),
 			geneInfo(item.prise,"ii-block","thumbs-up")

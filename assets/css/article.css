@@ -1,0 +1,195 @@
+a{
+  text-decoration:none;
+  color:#ddd;
+  cursor:pointer;
+}
+a:hover{color:#aaa;}
+.part{
+  margin:10px auto;
+}
+#header .part{
+  margin:0 auto;
+}
+#logo{padding:0;}
+#setWrapper{margin-right:0;}
+#menuWrapper{right:5px;}
+/*title*/
+#title{
+  font-size: 30px;
+  text-align: center;
+  padding:5px 0 15px 0;
+  word-wrap: break-word;
+  line-height: 30px;
+}
+.i-info{
+  border:none;
+}
+.ii-block{
+  float:right;
+}
+/*end title*/
+/*text*/
+.section{
+  text-indent: 2em;
+  font-size: 20px;
+  line-height: 25px;
+}
+.image{
+  text-align:center;
+}
+.image img{
+  max-width:80%;
+}
+.code pre{
+  background-color: #444;
+  border-radius: 5px;
+  border-color: #000;
+  color: #fff;
+  outline: none;
+  resize: none;
+  padding: 10px;
+  line-height: 22px;
+  letter-spacing: .3px;
+  font-family: Microsoft Yahei;
+  overflow: auto;
+}
+.code{
+  font-size: 18px;
+}
+.section,.image,.code{
+  margin:10px;
+}
+#prise{
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  background-color: #888;
+  border-radius: 5px;
+  font-size: 25px;
+  padding: 12px;
+  color: #fff;
+  cursor:pointer;
+  margin-top:20px;
+}
+#prise:hover{
+  background-color: #444;
+}
+#prise:active{
+  background-color: #222;
+}
+/*end text*/
+
+
+#footer{padding:10px 0;}
+/*link*/
+.link{
+  margin: 0 5px;
+  text-decoration: underline;  
+  word-wrap: break-word;
+}
+/*end link*/
+
+/*comment*/
+.comment{
+  font-size:18px;
+  width: 100%;
+  background-color: #444;
+  border-radius: 5px;
+  border-color: #000;
+  color: #fff;
+  outline: none;
+  height: 150px;
+  padding: 10px;
+  line-height: 22px;
+  letter-spacing: .3px;
+  font-family: Microsoft Yahei;
+  overflow: auto;
+}
+.comment.change{
+  font-size:14px;
+}
+.rabbit{
+  border-radius:5px;
+  width:40px;
+  height:40px;
+  margin: 0 1px;
+}
+.comment-toolbox{
+  height:auto;
+  margin-bottom:5px;
+  position:relative;
+}
+.comment-tool{
+  float: left;
+  height: 30px;
+  width: 30px;
+  border-radius: 2px;
+  border-right: 0;
+  padding: 4px;
+  cursor: pointer;
+}
+.comment-tool.right{
+  float:right;
+}
+.comment-tool.forbid{
+  cursor: no-drop;
+}
+.comment-tool img{
+  
+}
+.comment-tool span{
+  
+}
+.face-box{
+  display:none;
+  width:321px;
+  position:absolute;
+  top:30px;
+  left: 0;
+  border:1px solid #444;
+  border-right:0;
+  border-bottom:0;
+  box-shadow: 0 0 10px 2px #444;
+}
+.face-item{
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  float: left;
+  border: 1px solid #444;
+  border-top: 0;
+  border-left: 0;
+  cursor:pointer;
+}
+.face-box.change{width: 281px;}
+.face-item.change{width: 35px;height: 35px;}
+.button{
+  width: 60px;
+  height: 30px;
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor:pointer;
+}
+.button:hover{background-color: #222;}
+.button:active{background-color: #000;}
+/*end comment*/
+
+/*commentList*/
+/*end commentList*/
+
+/*for adaption*/
+.d-show{display:none;}
+.d-show.change{display:block;}
+.d-hide.change{display:none;}
+.part.change{width:96%;}
+#footer.change{padding:10px 0;}
+.wechat-img.change{left: -30px;}
+#footerLink.change{font-size:12px;}
+#title.change{font-size:17px;line-height:17px;}
+.section.change{font-size:15px}
+.code.change{font-size:10px;}
+.head-right.change{margin:10px 5px;}

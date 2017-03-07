@@ -1,5 +1,6 @@
 
 /*header*/
+#logo{padding:0;}
 .head-left,.head-right{
   margin:10px 5px;
 }
@@ -9,6 +10,9 @@
 #menuWrapper{
   right: 0;
   height:200px;
+}
+#setWrapper{
+  margin-right:0;
 }
 /*end header*/
 
