@@ -1,5 +1,4 @@
 a{
-  text-decoration:none;
   color:#ddd;
   cursor:pointer;
 }
@@ -29,6 +28,8 @@ a:hover{color:#aaa;}
 }
 /*end title*/
 /*text*/
+#text .section{
+}
 .section{
   text-indent: 2em;
   font-size: 20px;
@@ -108,6 +109,15 @@ a:hover{color:#aaa;}
 .comment.change{
   font-size:14px;
 }
+.span-link{
+  color:#ddd;
+  text-decoration:underline;
+  margin:0 2px;
+  cursor:pointer;
+}
+.span-link:hover{
+  color:#fff;
+}
 .rabbit{
   border-radius:5px;
   width:40px;
@@ -179,6 +189,34 @@ a:hover{color:#aaa;}
 /*end comment*/
 
 /*commentList*/
+.comment-item{
+}
+.c-user{
+  width:15%;
+  float:left;
+}
+.c-user-photo{
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  border-radius:50%;
+}
+.c-user-name{
+  text-align:center;
+}
+.c-content{
+  width:85%;
+  float:left;
+  padding:10px;
+}
+.c-content-info{
+  
+}
+.c-content-text{
+  
+}
+
+
 /*end commentList*/
 
 /*for adaption*/
@@ -187,7 +225,7 @@ a:hover{color:#aaa;}
 .d-hide.change{display:none;}
 .part.change{width:96%;}
 #footer.change{padding:10px 0;}
-.wechat-img.change{left: -30px;}
+.wechat-img.change{  left: -30px;}
 #footerLink.change{font-size:12px;}
 #title.change{font-size:17px;line-height:17px;}
 .section.change{font-size:15px}

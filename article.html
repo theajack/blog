@@ -109,20 +109,28 @@ J.ready(function(){
       <div id="comment" class="block">
         <div class="block-title">评论</div>
         <div class="comment-toolbox clearfix">
-          <div class="comment-tool"><img src="assets/images/face.png"/></div>
+          <div class="comment-tool c-face"><img src="assets/images/face.png"/></div>
           <div class="face-box" data-aim="commentArea"></div>
-          <div class="comment-tool"><img src="assets/images/link.png"/></div>
-          <div class="comment-tool forbid"><img src="assets/images/image.png"/></div>
+          <div class="comment-tool c-link" data-aim="commentArea"><img src="assets/images/link.png"/></div>
+          <div class="comment-tool c-image forbid"><img src="assets/images/image.png"/></div>
           <div class="comment-tool right button">提交</div>
         </div>
-        <div contenteditable="true" id="commentArea" class="comment"><a href="http://www.baidu.com">百度</a><img class="rabbit" src="assets/images/rabbit/rabbit (1).gif"/></div>
+        <div contenteditable="true" id="commentArea" class="comment">
+          <span class="span-link" contenteditable="false" onclick="Jet.jump('http://www.baidu.com')">百度</span>
+          <img class="rabbit" src="assets/images/rabbit/rabbit (1).gif"/>
+        </div>
       </div>
-      
       <div id="commentList" class="block">
         <div class="block-title">评论列表</div>
-        <div class="comment-item">
-          <div class="c-user"></div>
-          <div class="c-content"></div>
+        <div class="comment-item clearfix">
+          <div class="c-user">
+            <img class="c-user-photo" src="assets/images/bikeshare.png"/>
+            <div class="c-user-name">theajack</div>
+          </div>
+          <div class="c-content">
+            <div class="c-content-info">2017-09-09 11:11:11</div>
+            <div class="c-content-text">aaaasad大撒大苏打撒大多数a</div>
+          </div>
         </div>
       </div>
   
@@ -157,7 +165,12 @@ J.ready(function(){
         <span class="split-icon d-hide">|</span>
         
         Email:theajack@qq.com
-        <div><span class="wechat-public d-show">WeChat Official Accounts<img class="wechat-img" src="assets/images/wechat_qrcode.jpg"/></span></div>
+        <div class=" d-show">
+          <span class="wechat-public">
+            WeChat Official Accounts
+            <img class="wechat-img" src="assets/images/wechat_qrcode.jpg"/>
+          </span>
+        </div>
       </div>
       <div id="copyright">
         <span class="glyphicon glyphicon-copyright-mark"></span> 2016 TheaJack All rights reserved
