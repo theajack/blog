@@ -3,7 +3,7 @@ var username="一个小猴子aaaaaa";
 var c_name=["cover-block","input-wrapper"];
 var htmlCode='\
     <div class="cover display-none login-cover" onclick="closeLogin(this)">\
-      <div class="block cover-block" onclick="stopBubble(event)">\
+      <div class="block cover-block" onclick="stopLoginBubble(event)">\
         <div class="block-title">登录</div>\
         <div class="input-wrapper">\
           <div class="input-item clearfix">\
@@ -19,7 +19,7 @@ var htmlCode='\
       </div>\
     </div>\
     <div class="cover display-none regist-cover" onclick="closeLogin(this)">\
-      <div class="block cover-block" onclick="stopBubble(event)">\
+      <div class="block cover-block" onclick="stopLoginBubble(event)">\
         <div class="block-title">注册</div>\
         <div class="input-wrapper">\
           <div class="input-item clearfix">\
