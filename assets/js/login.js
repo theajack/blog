@@ -1,9 +1,63 @@
 //login regist logout
 var username="一个小猴子aaaaaa";
 var c_name=["cover-block","input-wrapper"];
+var htmlCode='\
+    <div class="cover display-none login-cover" onclick="closeLogin(this)">\
+      <div class="block cover-block" onclick="stopBubble(event)">\
+        <div class="block-title">登录</div>\
+        <div class="input-wrapper">\
+          <div class="input-item clearfix">\
+            <span class="glyphicon glyphicon-user"></span>\
+            <input type="text" jet-name="username" jet-valid="notnull" placeholder="用户名"/>\
+          </div>\
+          <div class="input-item clearfix">\
+            <span class="glyphicon glyphicon glyphicon-lock"></span>\
+            <input type="password" jet-name="password" jet-valid="notnull" placeholder="密码"/>\
+          </div>\
+          <div class="button div-center">确认</div>\
+        </div>\
+      </div>\
+    </div>\
+    <div class="cover display-none regist-cover" onclick="closeLogin(this)">\
+      <div class="block cover-block" onclick="stopBubble(event)">\
+        <div class="block-title">注册</div>\
+        <div class="input-wrapper">\
+          <div class="input-item clearfix">\
+            <span class="glyphicon glyphicon-user"></span>\
+            <input type="text" jet-name="username" jet-valid="notnull" placeholder="用户名"/>\
+          </div>\
+          <div class="input-item clearfix">\
+            <span class="glyphicon glyphicon-lock"></span>\
+            <input type="password" jet-name="password" jet-valid="notnull" placeholder="密码"/>\
+          </div>\
+          <div class="input-item clearfix">\
+            <span class="glyphicon glyphicon-ok-circle"></span>\
+            <input type="password" jet-name="passwordAgain" placeholder="确认密码"/>\
+          </div>\
+          <div class="input-item clearfix">\
+            <span class="glyphicon glyphicon-heart"></span>\
+            <select placeholder="性别" jet-name="sex">\
+              <option>男</option>\
+              <option>女</option>\
+            </select>\
+          </div>\
+          <div class="input-item clearfix">\
+            <span class="glyphicon glyphicon-calendar"></span>\
+            <input type="date" jet-name="birthday" jet-valid="date" placeholder="生日"/>\
+          </div>\
+          <div class="input-item clearfix">\
+            <span class="glyphicon glyphicon-envelope"></span>\
+            <input type="text" jet-name="email" jet-valid="email null" placeholder="邮箱"/>\
+          </div>\
+          <div class="button div-center">确认</div>\
+        </div>\
+      </div>\
+    </div>\
+';
 J.ready(function(){
   //if(checkLogin()){
   initEvent();
+  J.body().append(J.new("div").html(htmlCode));
   if(false){
     //J.class("regist").add
     S(".login .text").text(username);
