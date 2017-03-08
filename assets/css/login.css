@@ -76,7 +76,10 @@
 .input-item .glyphicon:active{
   background-color: #888;
 }
-.input-item input,.input-item select,.input-item input[type=date]::-webkit-outer-spin-button{
+.input-item input[type=date]{
+  
+}
+.input-item input,.input-item select{
   display:block;
   width:75%;
   float:left;
