@@ -12,9 +12,9 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
     <title>Blog theajack</title>
     <link rel="stylesheet" type="text/css" href="assets/css/glyphicon.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/index_p.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/article.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/login.css"/>
   </head>
   <body>
     <div id="header">
@@ -25,31 +25,28 @@
         <div class="head-left d-hide" onclick="Jet.open('http://www.theajack.site/jetterjs/')">
           Jetter.js
         </div>
-        <div class="head-left d-hide">
+        <div class="head-left d-hide" onclick="develop()">
           社区
         </div>
-        <div class="head-left d-hide">
+        <div class="head-left d-hide" onclick="develop()">
           留言板
         </div>
         
         <div class="head-right" id="setWrapper">
           <span class="glyphicon glyphicon-cog" id="set"></span>
         </div>
-        <div class="head-right d-hide">
-          注册
-        </div>
-        <div class="head-right">
+        <div class="head-right login">
           <span class="glyphicon glyphicon-user"></span>
-          登录
+          <span class="text">登录</span>
         </div>
         
         <div id="menuWrapper">
           <div class="menu-triangle"></div>
-          <div class="menu-item">个人中心</div>
-          <div class="menu-item d-show">注册</div>
-          <div class="menu-item d-show">社区</div>
-          <div class="menu-item d-show">留言板</div>
-          <div class="menu-item">退出登录</div>
+          <div class="menu-item regist">注册</div>
+          <div class="menu-item user-center" onclick="develop()">个人中心</div>
+          <div class="menu-item d-show" onclick="develop()">社区</div>
+          <div class="menu-item d-show" onclick="develop()">留言板</div>
+          <div class="menu-item logout">退出登录</div>
         </div>
       </div>
     </div>
@@ -60,6 +57,10 @@
           <div class=" ii-block darker">
             <span class=" glyphicon glyphicon-eject"></span>
             <span>置顶</span>
+          </div>
+          <div class=" ii-block darker">
+            <span class=" glyphicon glyphicon-star"></span>
+            <span>加精</span>
           </div>
           <div class=" ii-block">
             <span class=" glyphicon glyphicon-thumbs-up"></span>
@@ -102,7 +103,7 @@ J.ready(function(){
         </div>
         <div class="section">这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa</div>
         
-        <div id="prise"><span class="glyphicon glyphicon-thumbs-up"></span></div>
+        <div id="prise" onclick="prise()"><span class="glyphicon glyphicon-thumbs-up"></span><span class="number"/>999<span></div>
       </div>
   
       
@@ -110,30 +111,19 @@ J.ready(function(){
         <div class="block-title">评论</div>
         <div class="comment-toolbox clearfix">
           <div class="comment-tool c-face"><img src="assets/images/face.png"/></div>
-          <div class="face-box" data-aim="commentArea"></div>
-          <div class="comment-tool c-link" data-aim="commentArea"><img src="assets/images/link.png"/></div>
+          <div class="face-box">
+            <!--代码加载内容-->
+          </div>
+          <div class="comment-tool c-link"><img src="assets/images/link.png"/></div>
           <div class="comment-tool c-image forbid"><img src="assets/images/image.png"/></div>
           <div class="comment-tool right button">提交</div>
         </div>
-        <div contenteditable="true" id="commentArea" class="comment">
-          <span class="span-link" contenteditable="false" onclick="Jet.jump('http://www.baidu.com')">百度</span>
-          <img class="rabbit" src="assets/images/rabbit/rabbit (1).gif"/>
-        </div>
+        <div contenteditable="true" class="comment"></div>
       </div>
       <div id="commentList" class="block">
         <div class="block-title">评论列表</div>
-        <div class="comment-item clearfix">
-          <div class="c-user">
-            <img class="c-user-photo" src="assets/images/bikeshare.png"/>
-            <div class="c-user-name">theajack</div>
-          </div>
-          <div class="c-content">
-            <div class="c-content-info">2017-09-09 11:11:11</div>
-            <div class="c-content-text">aaaasad大撒大苏打撒大多数a</div>
-          </div>
-        </div>
+        <!--代码加载内容-->
       </div>
-  
       <div id="hot" class="block">
         <div class="block-title">最近热帖</div>
         <span class="link" onclick="Jet.open('https://github.com/theajack')">GitHub</span>
@@ -152,7 +142,6 @@ J.ready(function(){
         <span class="link" onclick="Jet.open('http://www.theajack.site/bombbattle/')">炸弹大作战</span>
         <span class="link" onclick="Jet.open('http://www.theajack.site/bike/')">人人单车纯净版</span>
       </div>
-      
     </div>
     <div id="footer">
       <div id="footerLink">
@@ -176,7 +165,78 @@ J.ready(function(){
         <span class="glyphicon glyphicon-copyright-mark"></span> 2016 TheaJack All rights reserved
       </div>
     </div>
+    
+    <div id="floatComment" class="cover display-none" onclick="closeCover(this)">
+      <div class="block cover-block" onclick="stopBubble(event)">
+        <div class="block-title">评论</div>
+        <div class="comment-toolbox clearfix">
+          <div class="comment-tool c-face"><img src="assets/images/face.png"/></div>
+          <div class="face-box">
+            <!--代码加载内容-->
+          </div>
+          <div class="comment-tool c-link"><img src="assets/images/link.png"/></div>
+          <div class="comment-tool c-image forbid"><img src="assets/images/image.png"/></div>
+          <div class="comment-tool right button">提交</div>
+        </div>
+        <div contenteditable="true" class="comment"></div>
+      </div>
+    </div>
+    
+    <div class="cover display-none login-cover" onclick="closeLogin(this)">
+      <div class="block cover-block" onclick="stopBubble(event)">
+        <div class="block-title">登录</div>
+        <div class="input-wrapper">
+          <div class="input-item clearfix">
+            <span class="glyphicon glyphicon-user"></span>
+            <input type="text" jet-name="username" jet-valid="notnull" placeholder="用户名"/>
+          </div>
+          <div class="input-item clearfix">
+            <span class="glyphicon glyphicon glyphicon-lock"></span>
+            <input type="password" jet-name="password" jet-valid="notnull" placeholder="密码"/>
+          </div>
+          <div class="button div-center">确认</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cover display-none regist-cover" onclick="closeLogin(this)">
+      <div class="block cover-block" onclick="stopBubble(event)">
+        <div class="block-title">注册</div>
+        <div class="input-wrapper">
+          <div class="input-item clearfix">
+            <span class="glyphicon glyphicon-user"></span>
+            <input type="text" jet-name="username" jet-valid="notnull" placeholder="用户名"/>
+          </div>
+          <div class="input-item clearfix">
+            <span class="glyphicon glyphicon-lock"></span>
+            <input type="password" jet-name="password" jet-valid="notnull" placeholder="密码"/>
+          </div>
+          <div class="input-item clearfix">
+            <span class="glyphicon glyphicon-ok-circle"></span>
+            <input type="password" jet-name="passwordAgain" placeholder="确认密码"/>
+          </div>
+          <div class="input-item clearfix">
+            <span class="glyphicon glyphicon-heart"></span>
+            <select placeholder="性别" jet-name="sex">
+              <option>男</option>
+              <option>女</option>
+            </select>
+          </div>
+          <div class="input-item clearfix">
+            <span class="glyphicon glyphicon-calendar"></span>
+            <input type="date" jet-name="birthday" jet-valid="date" placeholder="生日"/>
+          </div>
+          <div class="input-item clearfix">
+            <span class="glyphicon glyphicon-envelope"></span>
+            <input type="text" jet-name="email" jet-valid="email null" placeholder="邮箱"/>
+          </div>
+          <div class="button div-center">确认</div>
+        </div>
+      </div>
+    </div>
+    
     <script src="assets/js/jetter.min.js"></script>
+    <script src="assets/js/login.js"></script>
     <script src="assets/js/article.js"></script>
   </body>
 </html>

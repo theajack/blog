@@ -32,7 +32,6 @@ a:hover{color:#aaa;}
 }
 .section{
   text-indent: 2em;
-  font-size: 20px;
   line-height: 25px;
 }
 .image{
@@ -61,16 +60,23 @@ a:hover{color:#aaa;}
   margin:10px;
 }
 #prise{
-  width: 50px;
+  width: 90px;
   height: 50px;
   margin: 0 auto;
   background-color: #888;
   border-radius: 5px;
   font-size: 25px;
-  padding: 12px;
   color: #fff;
   cursor:pointer;
   margin-top:20px;
+  text-align:center;
+  line-height: 50px;
+}
+#prise .number{
+  margin-left:3px;
+}
+#prise .glyphicon{
+  top:5px;
 }
 #prise:hover{
   background-color: #444;
@@ -105,6 +111,7 @@ a:hover{color:#aaa;}
   letter-spacing: .3px;
   font-family: Microsoft Yahei;
   overflow: auto;
+  cursor:text;
 }
 .comment.change{
   font-size:14px;
@@ -135,8 +142,15 @@ a:hover{color:#aaa;}
   width: 30px;
   border-radius: 2px;
   border-right: 0;
-  padding: 4px;
+  padding: 3px;
   cursor: pointer;
+  border:1px solid transparent;
+  transition:border .5px linear;
+  -webkit-transition:border .5px linear;
+}
+.comment-tool:hover{
+  border:1px solid #888;
+  
 }
 .comment-tool.right{
   float:right;
@@ -183,42 +197,106 @@ a:hover{color:#aaa;}
   font-size: 15px;
   border-radius: 5px;
   cursor:pointer;
+  line-height: 30px;
+  padding:0!important;
 }
 .button:hover{background-color: #222;}
 .button:active{background-color: #000;}
 /*end comment*/
 
 /*commentList*/
-.comment-item{
+.comment-item{    
+  border-top: 1px dashed #aaa;
+  padding: 10px 0;
 }
 .c-user{
   width:15%;
   float:left;
 }
+.c-user.change{width:25%}
 .c-user-photo{
-  width: 80%;
-  margin: 0 auto;
+  width: 60%;
+  margin: 5px auto;
   display: block;
   border-radius:50%;
 }
+.c-user-photo.change{
+  width: 90%;
+}
 .c-user-name{
   text-align:center;
+  word-wrap: break-word;
 }
 .c-content{
   width:85%;
   float:left;
-  padding:10px;
+  padding:0 10px;
 }
+.c-content.change{width:75%}
+.c-content .ii-block{cursor:pointer;}
+.c-content .ii-block:hover{background-color:#ccc;}
+.c-content .ii-block:active{background-color:#aaa;}
 .c-content-info{
-  
 }
 .c-content-text{
-  
+}
+.c-content-text .span-link{
+  color:#666;
+}
+.c-content-text .span-link:hover{
+  color:#444;
+}
+.c-reply{
+}
+.c-reply-item{
+  border-top: 1px dashed #aaa;
+  padding-bottom: 10px;
+}
+.c-r-title{
+  padding-bottom: 10px;  
+  white-space: nowrap;
+  overflow: hidden;
+}
+.c-r-photo{
+      width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: relative;
+    top: 7px;
+}
+.c-r-name,.c-r-time{
+  margin: 0 5px;
+}
+.c-r-content{
+}
+.no-border{
+  border-top:0;
+}
+/*end commentList*/
+.cover{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0,0,0,.5);
+  z-index: 10;
+  cursor:pointer;
+}
+.cover-block{
+  margin: 200px auto;
+  padding:10px;
+  width:400px;
+  cursor:default;
+}
+.cover-block.change{
+  margin: 160px 10px;
+  width:auto;
 }
 
-
-/*end commentList*/
-
+.display-none{display:none;}
+.text-center{text-align:center;}
+.div-center{margin:0 auto;}
 /*for adaption*/
 .d-show{display:none;}
 .d-show.change{display:block;}
@@ -228,6 +306,18 @@ a:hover{color:#aaa;}
 .wechat-img.change{  left: -30px;}
 #footerLink.change{font-size:12px;}
 #title.change{font-size:17px;line-height:17px;}
-.section.change{font-size:15px}
+.normal-text,.section{font-size: 20px;}
+.small-text{font-size: 18px;}
+.normal-text.change,.section.change{font-size:15px}
+.small-text.change{font-size: 12px;}
 .code.change{font-size:10px;}
-.head-right.change{margin:10px 5px;}
+.head-right.change{
+  margin:10px 5px;
+}
+.block.change{padding:10px;}
+.c-content.change{padding-right:0;}
+
+
+
+/*login*/
+

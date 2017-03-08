@@ -57,8 +57,8 @@ body{
   height:40px;
   margin:10px 20px;
 }
-.head-right.user{
-  width:140px;
+.head-right{
+  max-width:150px;
   white-space:nowrap;
   overflow:hidden;
 }
@@ -179,10 +179,10 @@ body{
 }
 
 /*search*/
-#search{
+.search-wrapper{
   text-align:center;
 }
-#searchInput{
+.search-input{
   height: 30px;
   width:60%;
   background-color: #eee;
@@ -191,10 +191,10 @@ body{
   padding-left: 5px;
   outline:none;
 }
-#searchInput:focus{
+.search-input:focus{
   border-color:#888;
 }
-#searchBtn{
+.search-btn{
   width:15%;
   height: 30px;
   background-color: #aaa;
@@ -206,14 +206,14 @@ body{
   top: 5px;
   cursor: pointer;
 }
-#searchBtn:active{
+.search-btn:active{
   background-color: #888;
 }
 /*end search*/
 
 /*hot*/
 
-#hot .link{text-decoration:underline;}
+.hot-part .link{text-decoration:underline;}
 .block-title{
   font-size: 15px;
   font-weight: bold;
@@ -291,4 +291,54 @@ body{
 }
 .glyphicon{
   margin-right: 2px;
+}
+
+/*adaptive*/
+
+.d-show{display:none;}
+.d-show.change{display:block;}
+.d-hide.change{display:none;}
+/*header*/
+#logo.change{padding:0;}
+.head-left.change,.head-right.change{
+  margin:10px 5px;
+}
+.head-right.change{
+  margin:10px 5px;  
+}
+#menuWrapper.change{
+  right: 0;
+}
+#setWrapper.change{
+  margin-right:0;
+}
+/*end header*/
+
+#main.change{
+  margin:0 1%;
+  width: 98%;
+}
+.block.change{
+  padding: 12px;
+}
+/*search*/
+.search-input.change{
+  width:80%;
+}
+/*end search*/
+
+
+/*footer*/
+#footer.change{
+  padding:10px 0;
+}
+.wechat-img.change{
+  left: -30px;
+}
+#footerLink.change{
+  font-size:12px;
+}
+/*end footer*/
+.part.change{
+  width:96%;
 }
