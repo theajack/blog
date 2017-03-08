@@ -1,7 +1,7 @@
 var isMobile;
 var c_name=["d-show","d-hide","section","code","wechat-img","part","head-right"
   ,"comment","face-box","face-item","normal-text","c-user","c-content","c-user-photo"
-  ,"small-text","cover-block","c-content","block","input-wrapper"];
+  ,"small-text","c-content","block"];
 var i_name=["footer","footerLink","title"];
 
 J.ready(function(){

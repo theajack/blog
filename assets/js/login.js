@@ -1,6 +1,6 @@
 //login regist logout
 var username="一个小猴子aaaaaa";
-var c_name=["cover-block","input-wrapper"];
+var lc_name=["cover-block","input-wrapper"];
 var htmlCode='\
     <div class="cover display-none login-cover" onclick="closeLogin(this)">\
       <div class="block cover-block" onclick="stopLoginBubble(event)">\
@@ -56,8 +56,9 @@ var htmlCode='\
 ';
 J.ready(function(){
   //if(checkLogin()){
-  initEvent();
-  J.body().append(J.new("div").html(htmlCode));
+  J.body().append(J.new("div").html(htmlCode).initValid());
+  initLoginEvent();
+  initLoginClass();
   if(false){
     //J.class("regist").add
     S(".login .text").text(username);
@@ -66,9 +67,20 @@ J.ready(function(){
     J.class("logout").css("display","none");
   }  
 });
-function initEvent(){
+function initLoginEvent(){
   J.class("login").event("onclick",openLogin);
   J.class("regist").event("onclick",openRegist);
+}
+function initLoginClass(){
+  lc_name.each(function(item){
+    var obj=J.class(item);
+    obj.addClass("mobile");
+    if(J.width()<960){
+      obj.addClass("change");
+    }else{
+      obj.removeClass("change");
+    }
+  });
 }
 function checkLogin(){
   username=J.cookie("username");
