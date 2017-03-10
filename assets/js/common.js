@@ -36,7 +36,7 @@ function jsonp(json,callback,text,needShow){
         }
       }
     },
-    time:10000,
+    time:20000,
     timeout:function(err){
       Jet.show(err.message,"error");
     },

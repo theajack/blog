@@ -65,7 +65,7 @@ function bindData(){
       J.id("top").child(0).addClass("no-border");
     if(data.length>0)
       J.id("list").child(0).addClass("no-border");
-  });
+  },null,false);
 	
 }
 function bindOneData(item){
