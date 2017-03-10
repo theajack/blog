@@ -92,12 +92,15 @@ function checkLogin(){
   }
 }
 function openLogin(){
+  J.body().css("overflow","hidden");
  J.class("login-cover").fadeIn();
 }
 function openRegist(){
+  J.body().css("overflow","hidden");
  J.class("regist-cover").fadeIn();
 }
 function closeLogin(obj){
+  J.body().css("overflow","auto");
   obj.fadeOut();
 }
 function stopLoginBubble(e){

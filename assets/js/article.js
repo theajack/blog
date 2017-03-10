@@ -8,11 +8,12 @@ J.ready(function(){
   init();
   initClass();
   setStyle();
+  S("#comment [jet-name=a_id]").text(Jet.getUrlPara());
 })
 function init(){
   Jet.lang("chinese");
   Jet.setNoteStyle("gray");
-  bindComment();
+  //bindComment();
   initFaceBox();
   J.class("wechat-public").event({
     "onmouseover":"J.class('wechat-img').fadeIn()",
@@ -91,7 +92,7 @@ function setStyle(){
   }
 }
 
-var c_data=[
+/*var c_data=[
   {
     "name":"theajack",
     "photo":"assets/images/bikeshare.png",
@@ -165,7 +166,8 @@ var c_data=[
       }
     ]
   }
-];
+];*/
+
 function bindComment(){
   var list=J.id("commentList");
   c_data.each(function(item,i){
@@ -217,7 +219,7 @@ function bindOneComment(data,index){
   return c_item;
 }
 function comment(){//评论文章
-  
+  //jsonp()
 }
 function prise(){//点赞文章
   Jet.show("点赞文章成功");

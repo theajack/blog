@@ -1,4 +1,4 @@
-var data=[
+/*var data=[
 	{
 		name:"article",
 		title:"This is a title from data",
@@ -7,7 +7,7 @@ var data=[
 		comment:200,
 		prise:200,
 		top:0,
-		article:0,
+		star:0,
 	},{
 		name:"article",
 		title:"This is a title from data",
@@ -54,26 +54,29 @@ var data=[
 		top:0,
 		star:0,
 	}
-];
+];*/
 
 function bindData(){
-	data.each(function(item){
-		bindOneData(item);
-	});
-	if(J.id("top").child().length>0)
-		J.id("top").child(0).addClass("no-border");
-	if(data.length>0)
-		J.id("list").child(0).addClass("no-border");
+  jsonp("getAllArticle",function(data){
+    data.each(function(item){
+      bindOneData(item);
+    });
+    if(J.id("top").child().length>0)
+      J.id("top").child(0).addClass("no-border");
+    if(data.length>0)
+      J.id("list").child(0).addClass("no-border");
+  });
+	
 }
 function bindOneData(item){
 	var aitem=J.new("div.a-item");
-		var title=J.new("div.i-title[onclick=Jet.jump('"+item.name+".html')]").html(item.title);
+		var title=J.new("div.i-title[onclick=Jet.jump('"+item.name+".html?id="+item.id+"')]").html(item.title);
 		var info=J.new("div.i-info.clearfix");
 		info.append([
 			geneInfo(item.date,"ii-block","calendar"),
-			geneInfo(item.watch,"ii-block","eye-open"),
-			geneInfo(item.comment,"ii-block","comment"),
-			geneInfo(item.prise,"ii-block","thumbs-up")
+			geneInfo(item.watch_num,"ii-block","eye-open"),
+			geneInfo(item.comment_num,"ii-block","comment"),
+			geneInfo(item.prise_num,"ii-block","thumbs-up")
 		]);
 		if(item.top==1){info.append(geneInfo("置顶","ii-block darker","eject"))};
 		if(item.star==1){info.append(geneInfo("加精","ii-block darker","star"))};

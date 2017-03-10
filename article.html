@@ -118,7 +118,9 @@ J.ready(function(){
           <div class="comment-tool c-image forbid"><img src="assets/images/image.png"/></div>
           <div class="comment-tool right button">提交</div>
         </div>
-        <div contenteditable="true" class="comment"></div>
+        <span jet-name="nickname" class="display-none">theajack</span>
+        <span jet-name="a_id" class="display-none"></span>
+        <div contenteditable="true" jet-name="content" class="comment"></div>
       </div>
       <div id="commentList" class="block">
         <div class="block-title">评论列表</div>
@@ -183,6 +185,7 @@ J.ready(function(){
     </div>
     
     <script src="assets/js/jetter.min.js"></script>
+    <script src="assets/js/common.js"></script>
     <script src="assets/js/login.js"></script>
     <script src="assets/js/article.js"></script>
   </body>
