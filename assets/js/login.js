@@ -92,10 +92,15 @@ function checkLogin(){
   }
 }
 function openLogin(){
-  J.body().css("overflow","hidden");
+  J.body().css("overflow","hidden").event('ontouchmove', function (event) {
+    event.preventDefault();
+  });
  J.class("login-cover").fadeIn();
 }
 function openRegist(){
+  J.body().css("overflow","hidden").event('ontouchmove', function (event) {
+    event.preventDefault();
+  });
   J.body().css("overflow","hidden");
  J.class("regist-cover").fadeIn();
 }
