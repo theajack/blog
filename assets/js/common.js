@@ -1,5 +1,6 @@
 
-var url="http://localhost:50866/theajack/default.aspx";
+//var url="http://localhost:50866/theajack/default.aspx";
+var url="http://15h97945z7.iok.la"
 function jsonp(json,callback,text,needShow){
   if(needShow!=false)
     J.show("正在请求...","info");
