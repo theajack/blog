@@ -51,36 +51,36 @@
       </div>
     </div>
     <div id="content" class="part clearfix">
-      <div class="block">
-        <div id="title">这是一篇博客aaaa这是一篇博客aaa这是一篇博客aaa这是一篇博客aaa</div>
+      <div class="block" jet-form="title">
+        <div id="title" jet-name="title">Title</div>
         <div class="i-info clearfix">
-          <div class=" ii-block darker">
+          <div class=" ii-block darker display-none" id="articleTop">
             <span class=" glyphicon glyphicon-eject"></span>
             <span>置顶</span>
           </div>
-          <div class=" ii-block darker">
+          <div class=" ii-block darker display-none"  id="articleStar">
             <span class=" glyphicon glyphicon-star"></span>
             <span>加精</span>
           </div>
           <div class=" ii-block">
             <span class=" glyphicon glyphicon-thumbs-up"></span>
-            <span>200</span>
+            <span jet-name="prise_num" class="prise-num">0</span>
           </div>
           <div class=" ii-block">
             <span class=" glyphicon glyphicon-comment"></span>
-            <span>200</span>
+            <span jet-name="comment_num" class="comment-num">0</span>
           </div>
           <div class=" ii-block">
             <span class=" glyphicon glyphicon-eye-open"></span>
-            <span>200</span>
+            <span jet-name="watch_num" class="watch-num">0</span>
           </div>
           <div class="ii-block author">
             <span class=" glyphicon glyphicon-user"></span>
-            <span>theajack</span>
+            <span jet-name="author">author</span>
           </div>
           <div class="ii-block time">
             <span class=" glyphicon glyphicon-calendar"></span>
-            <span>2017-03-02 10:10</span>
+            <span jet-name="date">date</span>
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@ J.ready(function(){
         </div>
         <div class="section">这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa</div>
         
-        <div id="prise" onclick="prise()"><span class="glyphicon glyphicon-thumbs-up"></span><span class="number"/>999<span></div>
+        <div id="prise" onclick="prise()"><span class="glyphicon glyphicon-thumbs-up"></span><span class="prise-num"/>0<span></div>
       </div>
   
       
@@ -116,11 +116,12 @@ J.ready(function(){
           </div>
           <div class="comment-tool c-link"><img src="assets/images/link.png"/></div>
           <div class="comment-tool c-image forbid"><img src="assets/images/image.png"/></div>
-          <div class="comment-tool right button">提交</div>
+          <div class="comment-tool right button" onclick="comment()">提交</div>
         </div>
-        <span jet-name="nickname" class="display-none">theajack</span>
-        <span jet-name="a_id" class="display-none"></span>
-        <div contenteditable="true" jet-name="content" class="comment"></div>
+        <div contenteditable="true" jet-name="content" jet-get="html" class="comment"></div>
+        <jh jet-name="nickname""></jh>
+        <jh jet-name="a_id"></jh>
+        <jh jet-name="method">comment</jh>
       </div>
       <div id="commentList" class="block">
         <div class="block-title">评论列表</div>

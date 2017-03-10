@@ -92,20 +92,15 @@ function checkLogin(){
   }
 }
 function openLogin(){
-  J.body().css("overflow","hidden").event('ontouchmove', function (event) {
-    event.preventDefault();
-  });
+  lockScroll();
  J.class("login-cover").fadeIn();
 }
 function openRegist(){
-  J.body().css("overflow","hidden").event('ontouchmove', function (event) {
-    event.preventDefault();
-  });
-  J.body().css("overflow","hidden");
+  lockScroll();
  J.class("regist-cover").fadeIn();
 }
 function closeLogin(obj){
-  J.body().css("overflow","auto");
+  unlockScroll();
   obj.fadeOut();
 }
 function stopLoginBubble(e){

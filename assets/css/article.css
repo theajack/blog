@@ -219,6 +219,7 @@ a:hover{color:#aaa;}
   margin: 5px auto;
   display: block;
   border-radius:50%;
+  border: 1px solid #444;
 }
 .c-user-photo.change{
   width: 90%;
@@ -258,11 +259,12 @@ a:hover{color:#aaa;}
   overflow: hidden;
 }
 .c-r-photo{
-      width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    position: relative;
-    top: 7px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: relative;
+  top: 7px;
+  border: 1px solid #444;
 }
 .c-r-name,.c-r-time{
   margin: 0 5px;
