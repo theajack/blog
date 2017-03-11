@@ -1,8 +1,5 @@
 
 var a_id;
-var u_id=2;
-var u_nickname="theajack";
-var u_photo;
 var c_name=["d-show","d-hide","section","code","wechat-img","part","head-right"
   ,"comment","face-box","face-item","normal-text","c-user","c-content","c-user-photo"
   ,"small-text","c-content","block"];

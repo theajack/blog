@@ -1,6 +1,6 @@
 var isMobile=true;
-//var url="http://localhost:50866/theajack/default.aspx";
-var url="http://15h97945z7.iok.la"
+var url="http://localhost:50866/theajack/default.aspx";
+//var url="http://15h97945z7.iok.la"
 var noContent=J.new("div.no-content").html('\
   <img src="assets/images/rabbit/rabbit (26).gif" rt="26" onclick="addFace(this)">\
   <span>暂无内容</span>');
@@ -24,27 +24,31 @@ function jsonp(json,callback,text,needShow){
     dataType:"json",
     success:function(data){
       if(callback!=undefined){
-        switch(data.value){
-          case "true":
-            if(callback.constructor==Function){
-              callback(true);
-              if(text!=undefined){
-                Jet.show(text+"成功！")
-              }
-            }else{
-              Jet.show(callback+"成功！")
-            };break;
-          case "false":
-            if(callback.constructor==Function){
-              callback(false);
-              if(text!=undefined){
-                Jet.show(text+"失败！","error")
-              }
-            }else{
-              Jet.show(callback+"失败！","error")
-            };break;
-          case "error":J.show("服务器运行异常","error");break;
-          default:callback(data.value);break;
+        if(text==undefined){
+          callback(data.value);
+        }else{
+          switch(data.value){
+            case "true":
+              if(callback.constructor==Function){
+                callback(true);
+                if(text!=undefined){
+                  Jet.show(text+"成功！")
+                }
+              }else{
+                Jet.show(callback+"成功！")
+              };break;
+            case "false":
+              if(callback.constructor==Function){
+                callback(false);
+                if(text!=undefined){
+                  Jet.show(text+"失败！","error")
+                }
+              }else{
+                Jet.show(callback+"失败！","error")
+              };break;
+            case "error":J.show("服务器运行异常","error");break;
+            default:callback(data.value);break;
+          }
         }
       }
     },
