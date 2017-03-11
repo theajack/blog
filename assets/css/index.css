@@ -9,6 +9,15 @@
 jh{
   display:none;
 }
+.no-content{
+  font-size:20px;
+  text-align:center;
+}
+.no-content span{
+  position: relative;
+  top: -6px;
+  left: -5px;
+}
 *{
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

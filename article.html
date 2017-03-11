@@ -74,7 +74,7 @@
             <span class=" glyphicon glyphicon-eye-open"></span>
             <span jet-name="watch_num" class="watch-num">0</span>
           </div>
-          <div class="ii-block author">
+          <div class="ii-block author d-hide">
             <span class=" glyphicon glyphicon-user"></span>
             <span jet-name="author">author</span>
           </div>
@@ -103,7 +103,12 @@ J.ready(function(){
         </div>
         <div class="section">这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa</div>
         
-        <div id="prise" onclick="prise()"><span class="glyphicon glyphicon-thumbs-up"></span><span class="prise-num"/>0<span></div>
+        <div class="text-center">
+          <span id="prise" onclick="prise()">
+            <span class="glyphicon glyphicon-thumbs-up"></span>
+            <span class="prise-num"/>0<span>
+          </span>
+        </div>
       </div>
   
       
@@ -119,7 +124,7 @@ J.ready(function(){
           <div class="comment-tool right button" onclick="comment()">提交</div>
         </div>
         <div contenteditable="true" jet-name="content" jet-get="html" class="comment"></div>
-        <jh jet-name="nickname""></jh>
+        <jh jet-name="u_id"></jh>
         <jh jet-name="a_id"></jh>
         <jh jet-name="method">comment</jh>
       </div>
@@ -171,7 +176,7 @@ J.ready(function(){
     
     <div id="floatComment" class="cover display-none" onclick="closeCover(this)">
       <div class="block cover-block" onclick="stopBubble(event)">
-        <div class="block-title">评论</div>
+        <div class="block-title">回复 : <span class="reply-nickname"></span></div>
         <div class="comment-toolbox clearfix">
           <div class="comment-tool c-face"><img src="assets/images/face.png"/></div>
           <div class="face-box">
@@ -179,9 +184,12 @@ J.ready(function(){
           </div>
           <div class="comment-tool c-link"><img src="assets/images/link.png"/></div>
           <div class="comment-tool c-image forbid"><img src="assets/images/image.png"/></div>
-          <div class="comment-tool right button">提交</div>
+          <div class="comment-tool right button" onclick="reply()">提交</div>
+          <jh jet-name="bc_id"></jh>
+          <jh jet-name="u_id"></jh>
+          <jh jet-name="method">replyComment</jh>
         </div>
-        <div contenteditable="true" class="comment"></div>
+        <div contenteditable="true" jet-name="content" jet-get="html" class="comment"></div>
       </div>
     </div>
     

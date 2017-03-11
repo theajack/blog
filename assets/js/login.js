@@ -2,8 +2,8 @@
 var username="一个小猴子aaaaaa";
 var lc_name=["cover-block","input-wrapper"];
 var htmlCode='\
-    <div class="cover display-none login-cover" onclick="closeLogin(this)">\
-      <div class="block cover-block" onclick="stopLoginBubble(event)">\
+    <div class="cover display-none login-cover" onclick="closeCover(this)">\
+      <div class="block cover-block" onclick="stopBubble(event)">\
         <div class="block-title">登录</div>\
         <div class="input-wrapper">\
           <div class="input-item clearfix">\
@@ -18,8 +18,8 @@ var htmlCode='\
         </div>\
       </div>\
     </div>\
-    <div class="cover display-none regist-cover" onclick="closeLogin(this)">\
-      <div class="block cover-block" onclick="stopLoginBubble(event)">\
+    <div class="cover display-none regist-cover" onclick="closeCover(this)">\
+      <div class="block cover-block" onclick="stopBubble(event)">\
         <div class="block-title">注册</div>\
         <div class="input-wrapper">\
           <div class="input-item clearfix">\
@@ -92,23 +92,10 @@ function checkLogin(){
   }
 }
 function openLogin(){
-  lockScroll();
- J.class("login-cover").fadeIn();
+  openCover(J.class("login-cover"));
 }
 function openRegist(){
-  lockScroll();
- J.class("regist-cover").fadeIn();
-}
-function closeLogin(obj){
-  unlockScroll();
-  obj.fadeOut();
-}
-function stopLoginBubble(e){
-  if(e&&e.stopPropagation){
-    e.stopPropagation();
-  }else{
-    window.event.cancelBubble=true;
-  }
+  openCover(J.class("regist-cover"));
 }
 function regist(){
   J.class("regist-cover").validate(function(data){

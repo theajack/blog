@@ -19,6 +19,7 @@ a:hover{color:#aaa;}
   padding:5px 0 15px 0;
   word-wrap: break-word;
   line-height: 30px;
+  font-weight: bold;
 }
 .i-info{
   border:none;
@@ -60,8 +61,6 @@ a:hover{color:#aaa;}
   margin:10px;
 }
 #prise{
-  width: 90px;
-  height: 50px;
   margin: 0 auto;
   background-color: #888;
   border-radius: 5px;
@@ -71,9 +70,9 @@ a:hover{color:#aaa;}
   margin-top:20px;
   text-align:center;
   line-height: 50px;
+  padding:10px;
 }
-#prise .number{
-  margin-left:3px;
+#prise .prise-number{
 }
 #prise .glyphicon{
   top:5px;
@@ -122,8 +121,11 @@ a:hover{color:#aaa;}
   margin:0 2px;
   cursor:pointer;
 }
-.span-link:hover{
-  color:#fff;
+#commentList .span-link{
+  color:#888;
+}
+#commentList .span-link:hover{
+  color:#555;
 }
 .rabbit{
   border-radius:5px;
@@ -240,6 +242,10 @@ a:hover{color:#aaa;}
 .c-content-info{
 }
 .c-content-text{
+  margin-top:8px;
+}
+.c-content-text.change{
+  margin-top:0;
 }
 .c-content-text .span-link{
   color:#666;
@@ -274,6 +280,13 @@ a:hover{color:#aaa;}
 .no-border{
   border-top:0;
 }
+.reply-switch{
+  float: right;
+  font-weight: normal;
+  text-decoration: underline;
+  font-size: 12px;
+  cursor:pointer;
+}
 /*end commentList*/
 .cover{
   width: 100%;
@@ -307,7 +320,7 @@ a:hover{color:#aaa;}
 #footer.change{padding:10px 0;}
 .wechat-img.change{  left: -30px;}
 #footerLink.change{font-size:12px;}
-#title.change{font-size:17px;line-height:17px;}
+#title.change{font-size:17px;line-height:17px;padding-bottom: 10px;}
 .normal-text,.section{font-size: 20px;}
 .small-text{font-size: 18px;}
 .normal-text.change,.section.change{font-size:15px}
