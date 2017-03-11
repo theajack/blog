@@ -6,7 +6,7 @@ var noContent=J.new("div.no-content").html('\
   <span>暂无内容</span>');
 J.load(function(){
   if(!checkChange()){
-    J.body().hide();
+    J.body().css("display","none");
   }
   initClass();
   setStyle();
@@ -114,7 +114,7 @@ function resizeCall(callback){
     setStyle_call=callback;
 }
 function showBody(){
-  J.body().show();
+  J.body().css("display","block");
 }
 function refreshObjAdaptive(obj){
   initClass(obj);
