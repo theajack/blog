@@ -53,6 +53,7 @@
   padding-top:5px;
   width:50%;
   margin:0 auto;
+  position:relative;
 }
 .input-wrapper.change{
   width:90%;
@@ -111,3 +112,10 @@
 }
 .button:hover{background-color: #222;}
 .button:active{background-color: #000;}
+.go-regist{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-decoration: underline;
+  cursor: pointer;
+}

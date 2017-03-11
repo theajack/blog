@@ -198,6 +198,7 @@ function bindOneComment(data,index){
   return c_item;
 }
 function comment(){//评论文章
+  showNoLogin();
   var data=J.id("comment").get();
   if(!data.content){
     J.show("评论不可为空","warn");
@@ -250,10 +251,11 @@ function decodeContent(content){
   }
 }
 function prise(){//点赞文章
+  showNoLogin();
   jsonp({
     method:"prise",
     a_id:a_id,
-    u_id:2
+    u_id:u_id
   },function(data){
     if(data){
       J.class("prise-num").text(parseInt(J.class("prise-num").text())+1);
@@ -267,6 +269,7 @@ function openReply(obj){
   list.findClass("reply-nickname").text(obj.parent(2).prev().child(1).text());
 }
 function reply(){//评论回复
+  showNoLogin();
   var data=J.id("floatComment").get();
   if(!data.content){
     J.show("评论不可为空","warn");
@@ -282,6 +285,7 @@ function reply(){//评论回复
   }
 }
 function priseComment(obj){//点赞回复
+  showNoLogin();
   jsonp({
     method:"priseComment",
     bc_id:obj.next().attr("bc_id"),

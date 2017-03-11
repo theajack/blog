@@ -1,9 +1,12 @@
 //login regist logout
 var lc_name=["cover-block","input-wrapper"];
-var u_id;
-var u_nickname;
+var d_uid=1;
+var d_nickname="游客";
+var u_id=d_uid;
+var u_nickname=d_nickname;
 var u_password;
 var u_photo;
+var hasShowNoLogin=false;
 var htmlCode='\
     <div class="cover display-none login-cover" onclick="closeLogin()">\
       <div class="block cover-block" onclick="stopBubble(event)">\
@@ -19,6 +22,7 @@ var htmlCode='\
           </div>\
           <jh jet-name="method">login</jh>\
           <div class="button div-center" onclick="login()">确认</div>\
+          <span class="go-regist" onclick="goRegist()">前往注册</span>\
         </div>\
       </div>\
     </div>\
@@ -140,12 +144,16 @@ function logout(){
   J.class("user-center").hide();
   J.class("logout").hide();
   setSpin(J.id("set"));
+  u_id=d_uid;
+  u_nickname=d_nickname;
+  J.select("[jet-name=u_id]").text(d_uid);
   J.show("已退出登录");
 }
 function initUserInfo(data){
   data.method="getUserInfo";
   jsonp(data,function(res){
     setUserCookie(res[0]);
+    J.select("[jet-name=u_id]").text(res[0].id);
   },null,false);
 }
 function setUserCookie(json){
@@ -166,6 +174,9 @@ function initLogin(){
       method:"login"
     },function(res){
       if(res){
+        S(".login .text").text(data.nickname);
+        J.class("user-center").show();
+        J.class("logout").show();
         initUserInfo(res);
       }
     },null,false);
@@ -182,4 +193,16 @@ function checkCookie(){
   }else{
     return true;
   }
+}
+function showNoLogin(){
+  if(!hasShowNoLogin){
+    J.confirm("您当前是游客身份，是否登录?",function(){
+      openLogin();
+    });
+    hasShowNoLogin=true;
+  }
+}
+function goRegist(){
+  closeLogin();
+  openRegist();
 }
