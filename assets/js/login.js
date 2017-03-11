@@ -196,7 +196,7 @@ function checkCookie(){
   }
 }
 function showNoLogin(){
-  if(!hasShowNoLogin){
+  if(!hasShowNoLogin&&!checkCookie()){
     J.confirm("您当前是游客身份，是否登录?",function(){
       openLogin();
     });
