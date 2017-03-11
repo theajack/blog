@@ -168,16 +168,17 @@ function setUserCookie(json){
 }
 function initLogin(){
   if(checkCookie()){
-    jsonp({
+    var data={
       nickname:J.cookie("nickname"),
       password:J.cookie("password"),
       method:"login"
-    },function(res){
+    }
+    jsonp(data,function(res){
       if(res){
         S(".login .text").text(data.nickname);
         J.class("user-center").show();
         J.class("logout").show();
-        initUserInfo(res);
+        initUserInfo(data);
       }
     },null,false);
     return true;
