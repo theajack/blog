@@ -287,6 +287,27 @@ a:hover{color:#aaa;}
   font-size: 12px;
   cursor:pointer;
 }
+#allComment.change{
+  padding:5px;
+}
+#allComment .block{
+  width:70%;
+  height:96%;
+  margin-top:2%;
+  overflow:scroll;
+}
+.cover-close{
+  text-decoration:none;
+  font-size:18px;    
+  float: right;
+  cursor: pointer;
+}
+#allComment.change .block{
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+}
+/*#allCommentList::-webkit-scrollbar{ width:10px } */
 /*end commentList*/
 .cover{
   width: 100%;
@@ -333,6 +354,6 @@ a:hover{color:#aaa;}
 .c-content.change{padding-right:0;}
 
 
-
+.j-none{visibility:hidden!important;position:absolute!important;display:block!important;}
 /*login*/
 

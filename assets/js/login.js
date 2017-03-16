@@ -10,7 +10,7 @@ var hasShowNoLogin=false;
 var htmlCode='\
     <div class="cover display-none login-cover" onclick="closeLogin()">\
       <div class="block cover-block" onclick="stopBubble(event)">\
-        <div class="block-title">登录</div>\
+        <div class="block-title">登录<span class="glyphicon glyphicon-remove cover-close" onclick="closeCover(this.parent(3))"></span></div>\
         <div class="input-wrapper">\
           <div class="input-item clearfix">\
             <span class="glyphicon glyphicon-user"></span>\
@@ -28,7 +28,7 @@ var htmlCode='\
     </div>\
     <div class="cover display-none regist-cover" onclick="closeRegist()">\
       <div class="block cover-block" onclick="stopBubble(event)">\
-        <div class="block-title">注册</div>\
+        <div class="block-title">注册<span class="glyphicon glyphicon-remove cover-close" onclick="closeCover(this.parent(3))"></span></div>\
         <div class="input-wrapper">\
           <div class="input-item clearfix">\
             <span class="glyphicon glyphicon-user"></span>\
@@ -121,7 +121,7 @@ function regist(){
         }
       });
     }else{
-      Jet.show("两次密码输入不一致！","error")
+      J.show("两次密码输入不一致！","error")
     }
   });
 }
@@ -140,13 +140,13 @@ function login(){
 }
 function logout(){
   setUserCookie({});
-  S(".login .text").text("登录");
   J.class("user-center").hide();
   J.class("logout").hide();
   setSpin(J.id("set"));
   u_id=d_uid;
   u_nickname=d_nickname;
   J.select("[jet-name=u_id]").text(d_uid);
+  S(".login .text").text("登录");
   J.show("已退出登录");
 }
 function initUserInfo(data){

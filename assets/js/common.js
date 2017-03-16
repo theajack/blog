@@ -1,9 +1,7 @@
 var isMobile=true;
 //var url="http://localhost:50866/theajack/default.aspx";
-var url="http://15h97945z7.iok.la"
-var noContent=J.new("div.no-content").html('\
-  <img src="assets/images/rabbit/rabbit (26).gif" rt="26" onclick="addFace(this)">\
-  <span>暂无内容</span>');
+var url="http://15h97945z7.iok.la";
+var noContent=J.new("div.no-content");
 J.load(function(){
   if(!checkChange()){
     J.body().css("display","none");
@@ -32,19 +30,19 @@ function jsonp(json,callback,text,needShow){
               if(callback.constructor==Function){
                 callback(true);
                 if(text!=undefined){
-                  Jet.show(text+"成功！")
+                  J.show(text+"成功！")
                 }
               }else{
-                Jet.show(callback+"成功！")
+                J.show(callback+"成功！")
               };break;
             case "false":
               if(callback.constructor==Function){
                 callback(false);
                 if(text!=undefined){
-                  Jet.show(text+"失败！","error")
+                  J.show(text+"失败！","error")
                 }
               }else{
-                Jet.show(callback+"失败！","error")
+                J.show(callback+"失败！","error")
               };break;
             case "error":J.show("服务器运行异常","error");break;
             default:callback(data.value);break;
@@ -54,7 +52,7 @@ function jsonp(json,callback,text,needShow){
     },
     time:20000,
     timeout:function(err){
-      Jet.show(err.message,"error");
+      J.show(err.message,"error");
     },
     message:"请求超时"
   });
@@ -180,14 +178,29 @@ function stopBubble(e){
   }
 }
 function develop(){
-  Jet.show("暂不支持。","info")
+  J.show("暂不支持。","info")
 }
-function openCover(obj){
+function openCover(obj,bubble){
   lockScroll();
   obj.fadeIn();
+  if(bubble){
+    obj.event({
+      'ontouchmove':function (event) {
+        stopBubble(event);
+      },
+      'onmousewheel':function (event) {
+        stopBubble(event);
+      }
+    })
+    J.body().css("overflow","hidden");
+  }
 }
-function closeCover(obj){
+function closeCover(obj,bubble){
   unlockScroll();
   obj.fadeOut();
+  
+  if(bubble){
+    J.body().css("overflow","auto");
+  }
 }
 window.onresize=function(){setStyle()};

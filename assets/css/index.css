@@ -316,7 +316,7 @@ body{
   margin:10px 5px;
 }
 .head-right.change{
-  margin:10px 5px;  
+  max-width: 100px;
 }
 #menuWrapper.change{
   right: 0;

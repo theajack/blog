@@ -11,18 +11,18 @@
 
     <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
     <title>Blog theajack</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/glyphicon.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/index.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/article.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/login.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/glyphicon.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/article.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/login.css"/>
   </head>
   <body>
     <div id="header">
       <div class="part">
         <div id="logo">
-          <img src="assets/images/logo.png" onclick="Jet.jump('index.html')"/>
+          <img src="../assets/images/logo.png" onclick="J.jump('../index.html')"/>
         </div>
-        <div class="head-left d-hide" onclick="Jet.open('http://www.theajack.site/jetterjs/')">
+        <div class="head-left d-hide" onclick="J.open('http://www.theajack.site/jetterjs/')">
           Jetter.js
         </div>
         <div class="head-left d-hide" onclick="develop()">
@@ -87,7 +87,7 @@
       <div id="text" class="block">
         <div class="section">这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa</div>
         <div class="section">这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa</div>
-        <div class="image"><img src="assets/images/logo.png"/></div>
+        <div class="image"><img src="../assets/images/logo.png"/></div>
         <div class="section">这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa这是一段落aaa</div>
         <div class="code">
           <pre>
@@ -106,21 +106,20 @@ J.ready(function(){
         <div class="text-center">
           <span id="prise" onclick="prise()">
             <span class="glyphicon glyphicon-thumbs-up"></span>
-            <span class="prise-num"/>0<span>
+            <span class="prise-num">0</span>
           </span>
         </div>
       </div>
   
-      
       <div id="comment" class="block">
         <div class="block-title">评论</div>
         <div class="comment-toolbox clearfix">
-          <div class="comment-tool c-face"><img src="assets/images/face.png"/></div>
+          <div class="comment-tool c-face"><img src="../assets/images/face.png"/></div>
           <div class="face-box">
             <!--代码加载内容-->
           </div>
-          <div class="comment-tool c-link"><img src="assets/images/link.png"/></div>
-          <div class="comment-tool c-image forbid"><img src="assets/images/image.png"/></div>
+          <div class="comment-tool c-link"><img src="../assets/images/link.png"/></div>
+          <div class="comment-tool c-image forbid"><img src="../assets/images/image.png"/></div>
           <div class="comment-tool right button" onclick="comment()">提交</div>
         </div>
         <div contenteditable="true" jet-name="content" jet-get="html" class="comment"></div>
@@ -134,38 +133,38 @@ J.ready(function(){
       </div>
       <div id="hot" class="block">
         <div class="block-title">最近热帖</div>
-        <span class="link" onclick="Jet.open('https://github.com/theajack')">GitHub</span>
-        <span class="link" onclick="Jet.open('https://github.com/theajack')">GitHub</span>
-        <span class="link" onclick="Jet.open('https://github.com/theajack')">GitHub</span>
+        <span class="link" onclick="J.open('https://github.com/theajack')">GitHub</span>
+        <span class="link" onclick="J.open('https://github.com/theajack')">GitHub</span>
+        <span class="link" onclick="J.open('https://github.com/theajack')">GitHub</span>
       </div>
       <div id="link" class="block ">
         <div class="block-title">友情链接</div>
-        <span class="link" onclick="Jet.open('http://www.theajack.site/jetterjs/')">Jetter.js</span>
-        <span class="link" onclick="Jet.open('http://www.theajack.site/')">个人主页</span>
-        <span class="link" onclick="Jet.open('http://bikeshare.imwork.net')">人人单车</span>
-        <span class="link" onclick="Jet.open('http://a.app.qq.com/o/simple.jsp?pkgname=com.main.theajack'">2048 plus</span>
-        <span class="link" onclick="Jet.open('http://a.app.qq.com/o/simple.jsp?pkgname=com.example.stonefinance')">石头理财</span>
-        <span class="link" onclick="Jet.show('In developing')">突破防线</span>
-        <span class="link" onclick="Jet.open('http://www.theajack.site/maze/'">迷宫</span>
-        <span class="link" onclick="Jet.open('http://www.theajack.site/bombbattle/')">炸弹大作战</span>
-        <span class="link" onclick="Jet.open('http://www.theajack.site/bike/')">人人单车纯净版</span>
+        <span class="link" onclick="J.open('http://www.theajack.site/jetterjs/')">Jetter.js</span>
+        <span class="link" onclick="J.open('http://www.theajack.site/')">个人主页</span>
+        <span class="link" onclick="J.open('http://bikeshare.imwork.net')">人人单车</span>
+        <span class="link" onclick="J.open('http://a.app.qq.com/o/simple.jsp?pkgname=com.main.theajack')">2048 plus</span>
+        <span class="link" onclick="J.open('http://a.app.qq.com/o/simple.jsp?pkgname=com.example.stonefinance')">石头理财</span>
+        <span class="link" onclick="J.show('In developing')">突破防线</span>
+        <span class="link" onclick="J.open('http://www.theajack.site/maze/')">迷宫</span>
+        <span class="link" onclick="J.open('http://www.theajack.site/bombbattle/')">炸弹大作战</span>
+        <span class="link" onclick="J.open('http://www.theajack.site/bike/')">人人单车纯净版</span>
       </div>
     </div>
     <div id="footer">
       <div id="footerLink">
-        <span class="link" onclick="Jet.open('https://github.com/theajack')">GitHub</span>
+        <span class="link" onclick="J.open('https://github.com/theajack')">GitHub</span>
         <span class="split-icon">|</span>
-        <span class="link" onclick="Jet.open('http://weibo.com/p/1005055304330572/home?from=page_100505&mod=TAB&is_all=1')">Sina Micro-blog</span>
+        <span class="link" onclick="J.open('http://weibo.com/p/1005055304330572/home?from=page_100505&mod=TAB&is_all=1')">Sina Micro-blog</span>
         <span class="split-icon">|</span>
         
-        <span class="wechat-public d-hide">WeChat Official Accounts<img class="wechat-img" src="assets/images/wechat_qrcode.jpg"/></span>
+        <span class="wechat-public d-hide">WeChat Official Accounts<img class="wechat-img" src="../assets/images/wechat_qrcode.jpg"/></span>
         <span class="split-icon d-hide">|</span>
         
         Email:theajack@qq.com
         <div class=" d-show">
           <span class="wechat-public">
             WeChat Official Accounts
-            <img class="wechat-img" src="assets/images/wechat_qrcode.jpg"/>
+            <img class="wechat-img" src="../assets/images/wechat_qrcode.jpg"/>
           </span>
         </div>
       </div>
@@ -173,17 +172,28 @@ J.ready(function(){
         <span class="glyphicon glyphicon-copyright-mark"></span> 2016 TheaJack All rights reserved
       </div>
     </div>
+    <div id="allComment" class="cover display-none" onclick="closeAllComment()">
+      <div  class="block cover-block" onclick="stopBubble(event)">
+        <div class=" block-title">全部评论
+          <span class="glyphicon glyphicon-remove cover-close" onclick="closeAllComment()"></span>
+        </div>
+        <div id="allCommentList"></div>
+      </div>
+    </div>
     
     <div id="floatComment" class="cover display-none" onclick="closeCover(this)">
       <div class="block cover-block" onclick="stopBubble(event)">
-        <div class="block-title">回复 : <span class="reply-nickname"></span></div>
+        <div class="block-title">回复 : 
+          <span class="reply-nickname"></span>
+          <span class="glyphicon glyphicon-remove cover-close" onclick="closeCover(this.parent(3))"></span>
+        </div>
         <div class="comment-toolbox clearfix">
-          <div class="comment-tool c-face"><img src="assets/images/face.png"/></div>
+          <div class="comment-tool c-face"><img src="../assets/images/face.png"/></div>
           <div class="face-box">
             <!--代码加载内容-->
           </div>
-          <div class="comment-tool c-link"><img src="assets/images/link.png"/></div>
-          <div class="comment-tool c-image forbid"><img src="assets/images/image.png"/></div>
+          <div class="comment-tool c-link"><img src="../assets/images/link.png"/></div>
+          <div class="comment-tool c-image forbid"><img src="../assets/images/image.png"/></div>
           <div class="comment-tool right button" onclick="reply()">提交</div>
           <jh jet-name="bc_id"></jh>
           <jh jet-name="u_id">1</jh>
@@ -193,9 +203,10 @@ J.ready(function(){
       </div>
     </div>
     
-    <script src="assets/js/jetter.min.js"></script>
-    <script src="assets/js/common.js"></script>
-    <script src="assets/js/login.js"></script>
-    <script src="assets/js/article.js"></script>
+    
+    <script src="../assets/js/jetter.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/login.js"></script>
+    <script src="../assets/js/article.js"></script>
   </body>
 </html>
