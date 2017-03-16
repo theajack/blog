@@ -363,6 +363,7 @@ function reply(obj,isAll){//评论回复
           num.text(parseInt(num.text())+1);
           list.child(0).removeClass("no-border");
           list.child(1).prepend(geneReply(data,0));
+          refreshObjAdaptive(list);
         }
       }
     },"回复");

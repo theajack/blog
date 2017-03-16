@@ -85,9 +85,15 @@ function unlockScroll(){
         strDate = "0" + strDate;
     }
     var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
-            + " " + date.getHours() + seperator2 + date.getMinutes()
-            + seperator2 + date.getSeconds();
+            + " " + checkNum(date.getHours()) + seperator2 + checkNum(date.getMinutes())
+            + seperator2 + checkNum(date.getSeconds());
     return currentdate;
+}
+function checkNum(num){
+  if (num >= 0 && num <= 9) {
+    num = "0" + num;
+  }
+  return num;
 }
 function toDate(d){
   return d.split("T")[0];
