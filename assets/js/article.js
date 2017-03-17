@@ -1,15 +1,12 @@
 
 var a_id;
-var defaultPhoto="../assets/images/defaultPhoto.png";
+var defaultPhoto="assets/images/defaultPhoto.png";
 var c_name=["d-show","d-hide","section","code","wechat-img","part","head-right"
   ,"comment","face-box","face-item","normal-text","c-user","c-content","c-user-photo"
-  ,"small-text","c-content","block"];
+  ,"small-text","c-content","block","title1","title2","title3"];
 var i_name=["footer","footerLink","title","allComment"];
 J.ready(function(){
   init();
-  noContent.html('\
-    <img src="../assets/images/rabbit/rabbit (26).gif" rt="26" onclick="addFace(this)">\
-    <span>暂无内容</span>');
 })
 function init(){
   a_id=J.getUrlPara();
@@ -56,6 +53,10 @@ function bindArticle(){
       J.id("articleStar").removeClass("display-none");
     }
     J.class("prise-num").text(data[0].prise_num);
+    J.tag("title").text=data[0].title+"--(Blog theajack)";
+    //J.id("text").html(articleData[data[0].name]);
+    J.name("description").attr("content",J.id("text").child(0).text());
+    J.name("keywords").attr("content",J.id("text").child(1).text());
   },null,false);
 }
 function initFaceBox(){
@@ -70,7 +71,7 @@ function initFaceBox(){
       }
     });
     for(var i=1;i<=40;i++){
-      box.append(J.new("img.face-item[src=../assets/images/rabbit/rabbit ("+i+").gif][rt="+i+"][onclick=addFace(this)]"));
+      box.append(J.new("img.face-item[src=assets/images/rabbit/rabbit ("+i+").gif][rt="+i+"][onclick=addFace(this)]"));
     }
   });
   J.class("c-link").event("onclick",function(){
@@ -313,7 +314,7 @@ function decodeContent(content){
   if(con.child().length>0){
     con.child().each(function(item){
       if(item.hasAttr("rt")){
-        item.addClass("rabbit").attr("src","../assets/images/rabbit/rabbit ("+item.attr("rt")+").gif");
+        item.addClass("rabbit").attr("src","assets/images/rabbit/rabbit ("+item.attr("rt")+").gif");
       }else if(item.hasAttr("onclick")){
         item.addClass("span-link");
       }

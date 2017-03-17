@@ -9,9 +9,6 @@ var i_name=["logo","menuWrapper","setWrapper","main",
 J.ready(function(){
   init();
   initClass();
-  noContent.html('\
-    <img src="assets/images/rabbit/rabbit (26).gif" rt="26" onclick="addFace(this)">\
-    <span>暂无内容</span>')
 })
 function init(){
   resizeCall(setFooterPos);
