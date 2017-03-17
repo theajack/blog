@@ -6,8 +6,38 @@ var c_name=["d-show","d-hide","section","code","wechat-img","part","head-right"
   ,"small-text","c-content","block","title1","title2","title3"];
 var i_name=["footer","footerLink","title","allComment"];
 J.ready(function(){
+  if(J.isMobile()){ 
+    $('div.pinch-zoom').each(function () {
+      new RTP.PinchZoom($(this), {});
+    });
+    J.tag("img").event("onclick","bindZoom(this)");
+  }
   init();
 })
+function bindZoom(obj){
+  J.id("zoomImage").attr("src",obj.attr("src"));
+  var rate=obj.hei()/obj.wid();
+  var height=rate*J.width();
+  var top=(J.height()-height)/2;
+  if(top<0){
+    //alert(1)
+    var width=J.height()/rate;
+    J.class("pinch-zoom-container").css("margin-top","0px");
+    J.id("zoomImage").css({
+      "height":(J.height()-10)+"px",
+      "width":width+"px",
+      "margin":"5px "+(J.width()-width)/2+"px"
+    });
+  }else{
+    J.class("pinch-zoom-container").css("margin-top",top+"px");
+    J.id("zoomImage").css({
+      "height":"100%",
+      "width":"98%",
+      "margin":"0 1%"
+    });
+  }
+  openCover(J.id("zoomImageCover"));
+}
 function init(){
   a_id=J.getUrlPara();
   if(a_id.constructor==Object){

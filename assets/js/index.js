@@ -3,7 +3,7 @@
 
 
 var c_name=["d-show","d-hide","head-left","head-right",
-  "block","wechat-img","search-input","part"];
+  "block","wechat-img","search-input","part","i-title"];
 var i_name=["logo","menuWrapper","setWrapper","main",
   "footer","footerLink"];
 J.ready(function(){

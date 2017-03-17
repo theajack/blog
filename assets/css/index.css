@@ -158,6 +158,9 @@ body{
   cursor:pointer;
   padding: 5px 10px;
 }
+.i-title.change{
+  font-size: 18px;
+}
 .i-title:hover{
   text-decoration:underline;
   color:#000;
