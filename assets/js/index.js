@@ -44,7 +44,7 @@ function bindData(){
 }
 function bindOneData(item){
 	var aitem=J.new("div.a-item");
-		var title=J.new("div.i-title[onclick=J.jump('article/"+item.name+".html?id="+item.id+"')]").html(item.title);
+		var title=J.new("div.i-title[onclick=J.jump('article.html?id="+item.id+"')]").html(item.title);
 		var info=J.new("div.i-info.clearfix");
 		info.append([
 			geneInfo(toDate(item.date),"ii-block","calendar"),
