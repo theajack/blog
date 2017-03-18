@@ -311,6 +311,10 @@ function closeAllComment(){
   J.id('allCommentList').empty();
   S("#floatComment .button").attr("onclick","reply()");
 }
+function toComment(){
+  J.scrollTo(J.id("comment").top());
+  J.id("comment").focus();
+}
 function comment(){//评论文章
   showNoLogin();
   var data=J.id("comment").get();
