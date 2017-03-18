@@ -6,12 +6,7 @@ var c_name=["d-show","d-hide","section","code","wechat-img","part","head-right"
   ,"small-text","c-content","block","title1","title2","title3"];
 var i_name=["footer","footerLink","title","allComment"];
 J.ready(function(){
-  if(J.isMobile()){ 
-    $('div.pinch-zoom').each(function () {
-      new RTP.PinchZoom($(this), {});
-    });
-    J.id("text").findTag("img").event("onclick","bindZoom(this)");
-  }
+  
   init();
 })
 function bindZoom(obj){
@@ -89,8 +84,18 @@ function bindArticle(){
     J.class("prise-num").text(data[0].prise_num);
     J.tag("title").text=data[0].title+"--(Blog theajack)";
     $("#text").load("article/"+data[0].name+".html",function(){
-      J.name("description").attr("content",J.id("text").child(0).text());
-      J.name("keywords").attr("content",J.id("text").child(1).text());
+      var text=J.id("text");
+      J.name("description").attr("content",text.child(0).text());
+      J.name("keywords").attr("content",text.child(1).text());
+      if(J.isMobile()){ 
+        $('div.pinch-zoom').each(function () {
+          new RTP.PinchZoom($(this), {});
+        });
+        text.findTag("img").event("onclick","bindZoom(this)");
+      }else{
+        text.findTag("pre").attr("contenteditable",true);
+      }
+      refreshObjAdaptive(text);
     });
   },null,false);
 }

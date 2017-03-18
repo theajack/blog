@@ -34,8 +34,7 @@ jsnop是一种依靠开发人员的聪明才智创造出的一种非官方跨域
 var user = {
     nickname="theajack",
     password="123456"
-}
-  </pre>
+}</pre>
 </div>
 <div class="section">都做好保存之后，按F5启动网站，启动完成之后就不用管了，弹出来的页面也不要关闭。现在就相当于有一个localhost的服务器上面有一个user的数据，不过暂时先储存在js文件里，这么做是为了更深刻理解利用js跨域。接下来模拟另一台服务器的客户端。</div>
 <div class="title2">2.新建客户端</div>
@@ -49,7 +48,7 @@ var user = {
 <div class="image"><img src="assets/images/jsonp/9.png"/></div>
 <div class="tip">4.使用代码编辑工具或记事本打开，贴入如下代码，把下划线部分代码替换成你自己的链接，也就是复制好的链接+"JScript.js"</div>
 <div class="code">
-  <pre contenteditable="true" readonly="readonly" >
+  <pre >
 &lt;html&gt;
 &lt;head&gt;&lt;head&gt;
 &lt;body&gt;
@@ -58,8 +57,7 @@ var user = {
 &lt;script&gt;
 &#9;alert(user.nickname+" "+user.password);
 &lt;/script&gt;
-&lt;/html&gt;
-  </pre>
+&lt;/html&gt;</pre>
 </div>
 <div class="section">
 贴好之后不要忘记保存哦，然后就大功告成了！哈哈！让我们回到桌面，双击jsonp.html文件，或用浏览器打开它，结果如下:
@@ -80,8 +78,7 @@ var user = {
     nickname="theajack",
     password="123456"
 }
-callback(user);
-  </pre>
+callback(user);</pre>
 </div>
 <div class="title2">2.客户端改动</div>
 <div class="image"><img src="assets/images/jsonp/12.PNG"/></div>
@@ -98,8 +95,7 @@ function callback(user){
 }
 &lt;/script&gt;
 &lt;script src="<span class="link">http://localhost:37904/WebSite7/JScript.js</span>"&gt;&lt;/script&gt;
-&lt;/html&gt;
-  </pre>
+&lt;/html&gt;</pre>
 </div>
 
 <div class="section">
@@ -145,8 +141,7 @@ public partial class _Default : System.Web.UI.Page
     {
         return "'From server:" + arg + " success!'";
     }
-}
-  </pre>
+}</pre>
 </div>
 <div class="title2">2.客户端改动</div>
 <div class="image"><img src="assets/images/jsonp/18.png"/></div>
@@ -168,8 +163,7 @@ public partial class _Default : System.Web.UI.Page
     alert(result);
   }
 &lt;/script&gt;
-&lt;/html&gt;
-  </pre>
+&lt;/html&gt;</pre>
 </div>
 <div class="image"><img src="assets/images/jsonp/19.png"/></div>
 <div class="tip">2.保存好之后，用浏览器打开jsonp.html,结果如上图</div>
@@ -211,8 +205,7 @@ public partial class _Default : System.Web.UI.Page
         else
             return "";
     }
-}
-  </pre>
+}</pre>
 </div>
 
 <div class="title2">2.修改客户端</div>
@@ -269,8 +262,7 @@ public partial class _Default : System.Web.UI.Page
       }, options.time)
     }
   }
-&lt;/script&gt;&lt;/html&gt;
-  </pre>
+&lt;/script&gt;&lt;/html&gt;</pre>
 </div>
 <div class="section">这里引了一下我写的<span class="link" onclick="J.open('http://www.theajack.site/jetterjs/')">jetter.js</span>，以方便dom元素的操作，类似与jQuery,该类库已经对jsonp进行了封装</div>
 <div class="image"><img src="assets/images/jsonp/22.png"/></div>
