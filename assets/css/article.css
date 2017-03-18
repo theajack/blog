@@ -50,7 +50,6 @@ a:hover{color:#aaa;}
   outline: none;
   resize: none;
   padding: 10px;
-  line-height: 22px;
   letter-spacing: .3px;
   font-family: Microsoft Yahei;
   overflow: auto;
@@ -61,12 +60,14 @@ a:hover{color:#aaa;}
 }
 .code{
   font-size: 18px;
+  line-height: 22px;
   width:80%;
   margin:0 auto;
 }
 .code.change{
   width:auto;
   margin:10px;
+  line-height: 16px;
 }
 #prise{
   margin: 0 auto;
