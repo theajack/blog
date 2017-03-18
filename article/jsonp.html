@@ -216,7 +216,7 @@ public partial class _Default : System.Web.UI.Page
 &lt;html&gt;&lt;head&gt;&lt;head&gt;&lt;body&gt;&lt;/body&gt;
 &lt;script src="http://www.theajack.com/blog/assets/js/jetter.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
-  aa({
+  jsonp({
     url:"http://localhost:37904/WebSite7/Default.aspx",
     data:{
       method:"getUserInfo",
@@ -226,7 +226,7 @@ public partial class _Default : System.Web.UI.Page
       alert(data.nickname+" "+data.password);
     }
   });
-  function aa(options) {
+  function jsonp(options) {
     if (!options.url) {
       throw new Error("Parameter error");
     }else{

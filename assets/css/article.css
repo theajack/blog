@@ -9,6 +9,9 @@ a:hover{color:#aaa;}
 #header .part{
   margin:0 auto;
 }
+.cursor-pointer{
+  cursor:pointer;
+}
 #logo{padding:0;}
 #setWrapper{margin-right:0;}
 #menuWrapper{right:5px;}
