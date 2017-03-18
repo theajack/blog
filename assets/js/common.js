@@ -6,7 +6,7 @@ var noContent=J.new("div.no-content").html('\
     <img src="assets/images/rabbit/rabbit (26).gif" rt="26" onclick="addFace(this)">\
     <span>暂无内容</span>');
 J.load(function(){
-  if(!checkChange()){
+  if(checkChange()){
     J.body().css("display","none");
   }
   initClass();

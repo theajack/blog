@@ -238,10 +238,13 @@ body{
 
 /*link*/
 .link-img{
-  width: 31.33333%;
-  margin: 5px 1%;
+  width: 27.33333%;
+  margin: 5px 3%;
   float: left;
   cursor:pointer;
+}
+.link-img.little{
+  margin: 5px 4%;
 }
 .link-img.bg{
   background-color: #ccc;
