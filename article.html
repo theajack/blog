@@ -154,6 +154,17 @@
         <span class="glyphicon glyphicon-copyright-mark"></span> 2016 TheaJack All rights reserved
       </div>
     </div>
+    <div id="toolBox">
+      <div class="tool-item" onclick="prise()">
+        <span class=" glyphicon glyphicon-thumbs-up"></span>
+      </div>
+      <div class="tool-item go-comment" onclick="toComment()">
+        <span class=" glyphicon glyphicon-comment"></span>
+      </div>
+      <div class="tool-item go-top" onclick="toTop()">
+        <span class="glyphicon glyphicon-circle-arrow-up"></span>
+      </div>
+    </div>
     <div id="allComment" class="cover display-none" onclick="closeAllComment()">
       <div  class="block cover-block" onclick="stopBubble(event)">
         <div class=" block-title">全部评论
@@ -201,13 +212,6 @@
     <script src="assets/js/article.js"></script>
     <script src="assets/js/articleData.js"></script>
     <script src="assets/js/pinchzoom.js"></script>
-    <script type="text/javascript">
-      $(function () {
-        $('div.pinch-zoom').each(function () {
-            new RTP.PinchZoom($(this), {});
-        });
-      })
-    </script>
     
     
   </body>

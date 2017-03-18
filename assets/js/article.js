@@ -3,8 +3,8 @@ var a_id;
 var defaultPhoto="assets/images/defaultPhoto.png";
 var c_name=["d-show","d-hide","section","code","wechat-img","part","head-right"
   ,"comment","face-box","face-item","normal-text","c-user","c-content","c-user-photo"
-  ,"small-text","c-content","block","title1","title2","title3"];
-var i_name=["footer","footerLink","title","allComment"];
+  ,"small-text","c-content","block","title1","title2","title3","tool-item"];
+var i_name=["footer","footerLink","title","allComment","toolBox"];
 J.ready(function(){
   
   init();
@@ -47,6 +47,7 @@ function init(){
   bindComment();
   bindArticle();
   initFaceBox();
+  resizeCall(setToolBoxPos);
   J.class("wechat-public").event({
     "onmouseover":"J.class('wechat-img').fadeIn()",
     "onmouseleave":"J.class('wechat-img').fadeOut()"
@@ -57,6 +58,19 @@ function init(){
   J.jetName("a_id").text(a_id);
   J.jetName("u_id").text(u_id);
   addWatch();
+}
+function setToolBoxPos(){
+  if(!J.isMobile()){
+    J.id("toolBox").css({
+      right:(J.width()*0.15-60)+"px",
+      bottom:((J.height()-162)/2)+"px"
+    })
+  }else{
+    J.id("toolBox").css({
+      right:"5px",
+      bottom:((J.height()-102)/2)+"px"
+    })
+  }
 }
 function addWatch(){
   jsonp({
@@ -314,6 +328,9 @@ function closeAllComment(){
 function toComment(){
   J.scrollTo(J.id("comment").top());
   J.id("comment").focus();
+}
+function toTop(){
+  J.scrollTo(0);
 }
 function comment(){//评论文章
   showNoLogin();

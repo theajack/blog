@@ -499,4 +499,38 @@ ul{
     margin: 0;
     padding: 0;
 }
+/*toolbox*/
+#toolBox{
+  position:fixed;
+  bottom:0;
+  right:0;
+}
+#toolBox.change{
+  background-color:rgba(200,200,200,.6);
+  border-radius:5px;
+  right:5px;
+}
+.tool-item{
+  height: 50px;
+  width: 50px;
+  margin: 3px;
+  background-color: #444;
+  color: #aaa;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.tool-item.change{
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+  padding: 5px;
+  background-color: rgba(0,0,0,.3);
+  color: #ccc;
+}
+.tool-item:hover{
+  color:#fff;
+}
+
 
