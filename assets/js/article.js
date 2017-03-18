@@ -10,7 +10,7 @@ J.ready(function(){
     $('div.pinch-zoom').each(function () {
       new RTP.PinchZoom($(this), {});
     });
-    J.tag("img").event("onclick","bindZoom(this)");
+    J.id("text").findTag("img").event("onclick","bindZoom(this)");
   }
   init();
 })
@@ -37,6 +37,10 @@ function bindZoom(obj){
     });
   }
   openCover(J.id("zoomImageCover"));
+}
+function checkZoom(){
+  
+  
 }
 function init(){
   a_id=J.getUrlPara();
@@ -84,9 +88,10 @@ function bindArticle(){
     }
     J.class("prise-num").text(data[0].prise_num);
     J.tag("title").text=data[0].title+"--(Blog theajack)";
+    $("#text").load("jsonp.html");
     //J.id("text").html(articleData[data[0].name]);
-    J.name("description").attr("content",J.id("text").child(0).text());
-    J.name("keywords").attr("content",J.id("text").child(1).text());
+    //J.name("description").attr("content",J.id("text").child(0).text());
+    //J.name("keywords").attr("content",J.id("text").child(1).text());
   },null,false);
 }
 function initFaceBox(){

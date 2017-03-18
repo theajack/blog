@@ -56,10 +56,16 @@ a:hover{color:#aaa;}
   overflow: auto;
   margin:10px 0;
 }
+.section,.image,.code{
+  margin:10px;
+}
 .code{
   font-size: 18px;
+  width:80%;
+  margin:0 auto;
 }
-.section,.image,.code{
+.code.change{
+  width:auto;
   margin:10px;
 }
 #prise{

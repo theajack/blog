@@ -10,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
     <title>一步步理解和使用JSONP--(Blog theajack)</title>
+    <link rel="import" href="jsonp.html" id="page"/>
     <link rel="stylesheet" type="text/css" href="assets/css/glyphicon.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/index.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/article.css"/>
@@ -85,83 +86,6 @@
       </div>
       <div class="block">
         <div id="text">
-<jh>description</jh>
-<jh>keywords</jh>
-<div class="section">
-由于同源策略，一般来说位于a.com的网页无法与不是a.com的服务器沟通，如果有这样的需求，就必须实现跨域，jsnop就是跨域数据访问的方式之一。
-</div>
-<div class="section">
-jsnop是一种依靠开发人员的聪明才智创造出的一种非官方跨域数据交互协议，网上关于jsnop原理与优缺点的博客很多很多，本人也就不再一一赘述，其实记住两点就好：
-</div>
-<div class="section"><span class="stress-bold">1.它是利用script标签实现跨域；</span></div>
-<div class="section"><span class="stress-bold">2.它只支持get请求。</span></div>
-
-<div class="section">
-本人有跨域这个需求是在写github pages的时候，想在上面访问自己搭建的服务器上的数据，ajax在这个时候就无能为力了，于是本人学习了一下jsonp，并把它封装到本人自娱自乐的<span class="link" onclick="J.open('http://www.theajack.site/jetterjs/')">jetterjs</span>类库中，该博客地址的数据访问用的就是这种技术。
-</div>
-<div class="section">
-废话说的有点多了，接下来本人不才，尝试把我学习jsonp的过程一步一步还原一下。
-</div>
-<div class="title1">1.模拟跨域并简单跨域</div>
-<div class="section">服务器端我使用的ASP.net,我用的是visual studio 2010(java也是同理，本人没有实践)，客户端就随便新建一个html文件就可以啦。以下是代码和图示：</div>
-<div class="title2">1.服务器搭建</div>
-<div class="image"><img src="assets/images/jsonp/1.png"/></div>
-<div class="tip">1.打开visual studio，依次点击文件>新建>网站</div>
-<div class="image"><img src="assets/images/jsonp/2.png"/></div>
-<div class="tip">2.选择ASP.NET空网站，点击确定</div>
-<div class="image"><img src="assets/images/jsonp/3.png"/></div>
-<div class="tip">3.右击生成的网站，点击添加新项</div>
-<div class="image"><img src="assets/images/jsonp/4.png"/></div>
-<div class="tip">4.选择JScript文件，点击添加</div>
-<div class="image"><img src="assets/images/jsonp/5.png"/></div>
-<div class="tip">5.打开JScript.js文件，写入如下代码，保存</div>
-<div class="code">
-  <pre>
-var user = {
-    nickname="theajack",
-    password="123456"
-}
-  </pre>
-</div>
-<div class="section">都做好保存之后，按F5启动网站，启动完成之后就不用管了，弹出来的页面也不要关闭。现在就相当于有一个localhost的服务器上面有一个user的数据，不过暂时先储存在js文件里，这么做是为了更深刻理解利用js跨域。接下来模拟另一台服务器的客户端。</div>
-<div class="title2">2.新建客户端</div>
-<div class="section">客户端极其简单，就是一个html文件：</div>
-<div class="image"><img src="assets/images/jsonp/6.png"/></div>
-<div class="tip">1.右击桌面，新建文本文档</div>
-<div class="image"><img src="assets/images/jsonp/7.png"/></div>
-<div class="tip">2.右击桌面，重命名为jsonp.html并保存</div>
-<div class="image"><img src="assets/images/jsonp/8.png"/></div>
-<div class="tip">3.打开刚启动的ASP.NET网站，复制地址栏的链接</div>
-<div class="image"><img src="assets/images/jsonp/9.png"/></div>
-<div class="tip">4.使用代码编辑工具或记事本打开，贴入如下代码，把下划线部分代码替换成你自己的链接，也就是复制好的链接+"JScript.js"</div>
-<div class="code">
-  <pre contenteditable="true" readonly="readonly" >
-&lt;html&gt;
-&lt;head&gt;&lt;head&gt;
-&lt;body&gt;
-&lt;/body&gt;
-&lt;script src="<span class="link">http://localhost:37904/WebSite7/JScript.js</span>"&gt;&lt;/script&gt;
-&lt;script&gt;
-&#9;alert(user.nickname+" "+user.password);
-&lt;/script&gt;
-&lt;/html&gt;
-  </pre>
-</div>
-<div class="section">
-贴好之后不要忘记保存哦，然后就大功告成了！哈哈！让我们回到桌面，双击jsonp.html文件，或用浏览器打开它，结果如下:
-</div>
-<div class="image"><img src="assets/images/jsonp/10.png"/></div>
-<div class="section">
-我们成功的把服务器端的一个数据访问到了，由于html文件是在文件系统里打开的，而不是localhost，这就是跨域了，原理是不是一目了然？就是通过script标签来访问服务器上的数据，当然这么简单的跨域我们是拒绝的，我们需要服务器动态处理我们的请求，并返回不同的结果，而不仅仅是简单调用一下服务器上的函数或者变量，也就是说我们要用GET请求实现传参然后由服务器已回调函数的参数将结果传给客户端，不多废话了，直接上步骤:
-</div>
-
-<div class="title1">2.GET请求、回调传值</div>
-<div class="title2">1.服务器改动</div>
-<div class="section">
-这次我们不需要服务器端的js文件了，我们直接请求
-</div>
-
-
         </div>
         <div class="text-center">
           <span id="prise" onclick="prise()">
