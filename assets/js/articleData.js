@@ -11,7 +11,7 @@ jsnop是一种依靠开发人员的聪明才智创造出的一种非官方跨域
 <div class="section"><span class="stress-bold">2.它只支持get请求。</span></div>
 
 <div class="section">
-我有跨域这个需求是在写github pages的时候，想在上面访问自己搭建的服务器上的数据，ajax在这个时候就无能为力了，于是本人学习了一下jsonp，并把它封装到本人自娱自乐的<span class="link" onclick="J.open('http://www.theajack.site/jetterjs/')">jetter.js</span>类库中，该博客地址的数据访问用的就是这种技术。
+我有跨域这个需求是在写github pages的时候，想在上面访问自己搭建的服务器上的数据，ajax在这个时候就无能为力了，于是本人学习了一下jsonp，并把它封装到本人自娱自乐的<span class="link" onclick="J.open('http://www.theajack.com/jetterjs/')">jetter.js</span>类库中，该博客地址的数据访问用的就是这种技术。
 </div>
 <div class="section">
 废话说的有点多了，接下来本人不才，尝试把我学习jsonp的过程一步一步还原一下。
@@ -221,7 +221,7 @@ public partial class _Default : System.Web.UI.Page
 <div class="code">
   <pre>
 &lt;html&gt;&lt;head&gt;&lt;head&gt;&lt;body&gt;&lt;/body&gt;
-&lt;script src="http://www.theajack.site/blog/assets/js/jetter.min.js"&gt;&lt;/script&gt;
+&lt;script src="http://www.theajack.com/blog/assets/js/jetter.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
   aa({
     url:"http://localhost:37904/WebSite7/Default.aspx",
@@ -272,7 +272,7 @@ public partial class _Default : System.Web.UI.Page
 &lt;/script&gt;&lt;/html&gt;
   </pre>
 </div>
-<div class="section">这里引了一下我写的<span class="link" onclick="J.open('http://www.theajack.site/jetterjs/')">jetter.js</span>，以方便dom元素的操作，类似与jQuery,该类库已经对jsonp进行了封装</div>
+<div class="section">这里引了一下我写的<span class="link" onclick="J.open('http://www.theajack.com/jetterjs/')">jetter.js</span>，以方便dom元素的操作，类似与jQuery,该类库已经对jsonp进行了封装</div>
 <div class="image"><img src="assets/images/jsonp/22.png"/></div>
 <div class="tip">2.将jsonp.html用浏览器打开，结果如上图，服务器接收到我们的参数之后又将nickname加上123作为密码传给了客户端。以模拟去数据库查询的操作，而method参数就可以作为服务器执行查询的指示。</div>
 <div class="title1">5.结束</div>
