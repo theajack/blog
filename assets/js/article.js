@@ -88,10 +88,10 @@ function bindArticle(){
     }
     J.class("prise-num").text(data[0].prise_num);
     J.tag("title").text=data[0].title+"--(Blog theajack)";
-    $("#text").load("article/"+data[0].name+".html");
-    
-    J.name("description").attr("content",J.id("text").child(0).text());
-    J.name("keywords").attr("content",J.id("text").child(1).text());
+    $("#text").load("article/"+data[0].name+".html",function(){
+      J.name("description").attr("content",J.id("text").child(0).text());
+      J.name("keywords").attr("content",J.id("text").child(1).text());
+    });
   },null,false);
 }
 function initFaceBox(){
