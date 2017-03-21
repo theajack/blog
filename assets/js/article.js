@@ -1,5 +1,5 @@
 
-var a_id;
+var a_id,a_name;
 var defaultPhoto="assets/images/defaultPhoto.png";
 var c_name=["d-show","d-hide","section","code","wechat-img","part","head-right"
   ,"comment","face-box","face-item","normal-text","c-user","c-content","c-user-photo"
@@ -38,12 +38,12 @@ function checkZoom(){
   
 }
 function init(){
-  a_id=J.getUrlPara();
-  if(a_id.constructor==Object){
-    a_id=a_id.id;
-  }
   J.lang("chinese");
   J.setNoteStyle("gray");
+  var data=J.getUrlPara()
+  a_id=data.id;
+  a_name=data.name;
+  loadText();
   bindComment();
   bindArticle();
   initFaceBox();
@@ -58,6 +58,23 @@ function init(){
   J.jetName("a_id").text(a_id);
   J.jetName("u_id").text(u_id);
   addWatch();
+}
+function loadText(){
+  $("#text").load("article/"+a_name+".html",function(){
+    var text=J.id("text");
+    J.name("description").attr("content",text.child(0).text());
+    J.name("keywords").attr("content",text.child(1).text());
+    J.id("title").text("content",text.child(2).text());
+    if(J.isMobile()){ 
+      $('div.pinch-zoom').each(function () {
+        new RTP.PinchZoom($(this), {});
+      });
+      text.findTag("img").event("onclick","bindZoom(this)");
+    }else{
+      text.findTag("pre").attr("contenteditable",true);
+    }
+    refreshObjAdaptive(text);
+  });
 }
 function setToolBoxPos(){
   if(!J.isMobile()){
@@ -97,20 +114,6 @@ function bindArticle(){
     }
     J.class("prise-num").text(data[0].prise_num);
     J.tag("title").text=data[0].title+"--(Blog theajack)";
-    $("#text").load("article/"+data[0].name+".html",function(){
-      var text=J.id("text");
-      J.name("description").attr("content",text.child(0).text());
-      J.name("keywords").attr("content",text.child(1).text());
-      if(J.isMobile()){ 
-        $('div.pinch-zoom').each(function () {
-          new RTP.PinchZoom($(this), {});
-        });
-        text.findTag("img").event("onclick","bindZoom(this)");
-      }else{
-        text.findTag("pre").attr("contenteditable",true);
-      }
-      refreshObjAdaptive(text);
-    });
   },null,false);
 }
 function initFaceBox(){

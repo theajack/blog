@@ -1,5 +1,14 @@
 
-
+var articles=[{
+  id:"3",
+  title:"jsonp跨域的客户端服务器搭建",
+  name:"jsonp",
+  date:"2017-03-16",
+  author:"theajack",
+  watch_num:0,
+  comment_num:0,
+  prise_num:0
+}];
 
 
 var c_name=["d-show","d-hide","head-left","head-right",
@@ -14,7 +23,13 @@ function init(){
   resizeCall(setFooterPos);
   J.lang("chinese");
   J.setNoteStyle("gray");
-  bindData();
+  
+  bindData(articles);
+  
+  jsonp("getAllArticle",function(data){
+    J.id("list").empty().html('<div class="block-title">全部文章</div>');
+    bindData(data);
+  },null,false);
   J.class("wechat-public").event({
     "onmouseover":"J.class('wechat-img').fadeIn()",
     "onmouseleave":"J.class('wechat-img').fadeOut()"
@@ -23,8 +38,7 @@ function init(){
     setSpin(this);
   })
 }
-function bindData(){
-  jsonp("getAllArticle",function(data){
+function bindData(data){
     data.each(function(item){
       bindOneData(item);
     });
@@ -39,12 +53,10 @@ function bindData(){
       J.id("list").append(noContent.clone());
     }
     refreshObjAdaptive(J.id("list"));
-  },null,false);
-	
 }
 function bindOneData(item){
 	var aitem=J.new("div.a-item");
-		var title=J.new("div.i-title[onclick=J.jump('article.html?id="+item.id+"')]").html(item.title);
+		var title=J.new("div.i-title[onclick=J.jump('article.html?id="+item.id+"&name="+item.name+"')]").html(item.title);
 		var info=J.new("div.i-info.clearfix");
 		info.append([
 			geneInfo(toDate(item.date),"ii-block","calendar"),
