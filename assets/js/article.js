@@ -72,7 +72,7 @@ function loadText(){
     }
     J.name("description").attr("content",J.id("hideDes").text());
     J.name("keywords").attr("content",J.id("hideKeyWords").text());
-    J.id("title").text("content",J.id("hideTitle").text());
+    J.id("title").text(J.id("hideTitle").text());
     refreshObjAdaptive(text);
   });
 }
