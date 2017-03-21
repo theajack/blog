@@ -62,9 +62,6 @@ function init(){
 function loadText(){
   $("#text").load("article/"+a_name+".html",function(){
     var text=J.id("text");
-    J.name("description").attr("content",text.child(0).text());
-    J.name("keywords").attr("content",text.child(1).text());
-    J.id("title").text("content",text.child(2).text());
     if(J.isMobile()){ 
       $('div.pinch-zoom').each(function () {
         new RTP.PinchZoom($(this), {});
@@ -73,6 +70,9 @@ function loadText(){
     }else{
       text.findTag("pre").attr("contenteditable",true);
     }
+    J.name("description").attr("content",J.id("hideDes").text());
+    J.name("keywords").attr("content",J.id("hideKeyWords").text());
+    J.id("title").text("content",J.id("hideTitle").text());
     refreshObjAdaptive(text);
   });
 }
