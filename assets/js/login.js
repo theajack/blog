@@ -1,5 +1,4 @@
 //login regist logout
-var lc_name=["cover-block","input-wrapper"];
 var d_uid=1;
 var d_nickname="游客";
 var u_id=d_uid;
@@ -66,7 +65,6 @@ var htmlCode='\
 J.ready(function(){
   J.body().append(J.new("div").html(htmlCode).initValid());
   initLoginEvent();
-  initLoginClass();
   if(initLogin()){
     S(".login .text").text(u_nickname);
   }else{
@@ -78,17 +76,6 @@ function initLoginEvent(){
   J.class("login").event("onclick",openLogin);
   J.class("regist").event("onclick",openRegist);
   J.class("logout").event("onclick",logout);
-}
-function initLoginClass(){
-  lc_name.each(function(item){
-    var obj=J.class(item);
-    obj.addClass("mobile");
-    if(J.width()<960){
-      obj.addClass("change");
-    }else{
-      obj.removeClass("change");
-    }
-  });
 }
 function closeLogin(){
   closeCover(J.class("login-cover").clear());

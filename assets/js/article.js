@@ -1,13 +1,24 @@
 
 var a_id,a_name;
 var defaultPhoto="assets/images/defaultPhoto.png";
-var c_name=["d-show","d-hide","section","code","wechat-img","part","head-right"
-  ,"comment","face-box","face-item","normal-text","c-user","c-content","c-user-photo"
-  ,"small-text","c-content","block","title1","title2","title3","tool-item"];
-var i_name=["footer","footerLink","title","allComment","toolBox"];
 J.ready(function(){
-  
-  init();
+  var data=J.getUrlPara()
+  a_id=data.id;
+  a_name=data.name;
+  loadText();
+  bindComment();
+  bindArticle();
+  initFaceBox();
+  J.class("wechat-public").event({
+    "onmouseover":"J.class('wechat-img').fadeIn()",
+    "onmouseleave":"J.class('wechat-img').fadeOut()"
+  });
+  J.id("set").event("onclick",function(){
+    setSpin(this);
+  })
+  J.jetName("a_id").text(a_id);
+  J.jetName("u_id").text(u_id);
+  addWatch();
 })
 function bindZoom(obj){
   J.id("zoomImage").attr("src",obj.attr("src"));
@@ -33,32 +44,6 @@ function bindZoom(obj){
   }
   openCover(J.id("zoomImageCover"));
 }
-function checkZoom(){
-  
-  
-}
-function init(){
-  J.lang("chinese");
-  J.setNoteStyle("gray");
-  var data=J.getUrlPara()
-  a_id=data.id;
-  a_name=data.name;
-  loadText();
-  bindComment();
-  bindArticle();
-  initFaceBox();
-  resizeCall(setToolBoxPos);
-  J.class("wechat-public").event({
-    "onmouseover":"J.class('wechat-img').fadeIn()",
-    "onmouseleave":"J.class('wechat-img').fadeOut()"
-  });
-  J.id("set").event("onclick",function(){
-    setSpin(this);
-  })
-  J.jetName("a_id").text(a_id);
-  J.jetName("u_id").text(u_id);
-  addWatch();
-}
 function loadText(){
   $("#text").load("article/"+a_name+".html",function(){
     var text=J.id("text");
@@ -73,11 +58,10 @@ function loadText(){
     J.name("description").attr("content",J.id("hideDes").text());
     J.name("keywords").attr("content",J.id("hideKeyWords").text());
     J.id("title").text(J.id("hideTitle").text());
-    refreshObjAdaptive(text);
   });
 }
 function setToolBoxPos(){
-  if(!J.isMobile()){
+  if(J.width()>900){
     J.id("toolBox").css({
       right:(J.width()*0.15-60)+"px",
       bottom:((J.height()-162)/2)+"px"
@@ -204,7 +188,6 @@ function bindComment(isFresh){
         list.css("height","auto")
       }
     }
-    refreshObjAdaptive(list);
   },null,false);
 }
 function bindAllComment(){
@@ -231,7 +214,6 @@ function bindAllComment(){
       //  list.css("height","auto")
       //}
     }
-    refreshObjAdaptive(list);
   },null,false);
 }
 function bindOneComment(data,index,isAll){
@@ -321,7 +303,6 @@ function addComment(obj){
       obj.before(bindOneComment(reply,null,true));
     }
   }
-  refreshObjAdaptive(obj.parent());
 }
 function closeAllComment(){
   closeCover(J.id('allComment'),true);
@@ -428,7 +409,6 @@ function reply(obj,isAll){//评论回复
           num.text(parseInt(num.text())+1);
           list.child(0).removeClass("no-border");
           list.child(1).prepend(geneReply(data,0));
-          refreshObjAdaptive(list);
         }
       }
     },"回复");
@@ -454,4 +434,4 @@ function switchReply(obj){
   obj.text((obj.text()=="收起")?"展开":"收起");
   obj.parent().next().slideToggle();
 }
-window.onresize=function(){setStyle()};
+window.onresize=setToolBoxPos;

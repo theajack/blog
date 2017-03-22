@@ -158,9 +158,6 @@ body{
   cursor:pointer;
   padding: 5px 10px;
 }
-.i-title.change{
-  font-size: 18px;
-}
 .i-title:hover{
   text-decoration:underline;
   color:#000;
@@ -313,49 +310,60 @@ body{
 /*adaptive*/
 
 .d-show{display:none;}
-.d-show.change{display:block;}
-.d-hide.change{display:none;}
 /*header*/
-#logo.change{padding:0;}
-.head-left.change,.head-right.change{
-  margin:10px 5px;
-}
-.head-right.change{
-  max-width: 100px;
-}
-#menuWrapper.change{
-  right: 0;
-}
-#setWrapper.change{
-  margin-right:0;
-}
-/*end header*/
 
-#main.change{
-  margin:0 1%;
-  width: 98%;
-}
-.block.change{
-  padding: 12px;
-}
-/*search*/
-.search-input.change{
-  width:80%;
-}
 /*end search*/
 
 
 /*footer*/
-#footer.change{
-  padding:10px 0;
-}
-.wechat-img.change{
-  left: -30px;
-}
-#footerLink.change{
-  font-size:12px;
-}
+
+
 /*end footer*/
-.part.change{
-  width:96%;
+
+@media screen and (max-width:900px) {
+  
+  .i-title{
+    font-size: 18px;
+  }
+  .d-show{display:block;}
+  .d-hide{display:none;}
+  #logo{padding:0;}
+  .head-left,.head-right{
+    margin:10px 5px;
+  }
+  .head-right{
+    max-width: 100px;
+  }
+  #menuWrapper{
+    right: 0;
+  }
+  #setWrapper{
+    margin-right:0;
+  }
+  /*end header*/
+
+  #main{
+    margin:0 1%;
+    width: 98%;
+  }
+  .block{
+    padding: 12px;
+  }
+  /*search*/
+  .search-input{
+    width:80%;
+  }
+  #footer{
+    padding:10px 0;
+  }
+  .wechat-img{
+    left: -30px;
+  }
+  #footerLink{
+    font-size:12px;
+  }
+  .part{
+    width:96%;
+  }
 }
+

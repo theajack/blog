@@ -5,14 +5,10 @@ var url="http://15h97945z7.iok.la";
 var noContent=J.new("div.no-content").html('\
     <img src="assets/images/rabbit/rabbit (26).gif" rt="26" onclick="addFace(this)">\
     <span>暂无内容</span>');
-J.load(function(){
-  if(checkChange()){
-    J.body().css("display","none");
-  }
-  initClass();
-  setStyle();
-  showBody();
-})
+J.ready(function(){
+  J.lang("chinese");
+  J.setNoteStyle("gray");
+});
 function jsonp(json,callback,text,needShow){
   if(needShow!=false)
     J.show("正在请求...","info");
@@ -105,64 +101,6 @@ function toDatetime(d){
   return d.replace("T"," ");
 }
 
-function initClass(obj){
-  if(obj!=undefined){
-    c_name.each(function(item){
-      obj.findClass(item).addClass("mobile change");
-    });
-  }else{
-    c_name.each(function(item){
-      J.class(item).addClass("mobile change");
-    });    
-    i_name.each(function(item){
-      J.id(item).addClass("mobile change");
-    });
-  }
-}
-var setStyle_call=null;
-function resizeCall(callback){
-  if(callback!=undefined)
-    setStyle_call=callback;
-}
-function showBody(){
-  J.body().css("display","block");
-}
-function refreshObjAdaptive(obj){
-  initClass(obj);
-  setStyle(obj);
-  return obj;
-}
-function setStyle(obj){
-  if(checkChange()){
-    if(obj==undefined){
-      if(!isMobile||isMobile==null){
-        isMobile=true;
-        J.class("mobile").addClass("change");
-      }
-    }else{
-      obj.findClass("mobile").addClass("change");
-    }
-  }else{
-    if(obj==undefined){
-      if(isMobile||isMobile==null){
-        isMobile=false;
-        J.class("mobile").removeClass("change");
-      }
-    }else{
-      obj.findClass("mobile").removeClass("change");
-    }
-  }
-  if(setStyle_call!=undefined)
-    setStyle_call();
-}
-function checkChange(){
-  if(document.body.scrollWidth<960){
-    return true;
-  }
-  return false;
-}
-
-
 
 function setSpin(obj){
   if(obj.data("spin")!=true){
@@ -212,4 +150,3 @@ function closeCover(obj,bubble){
     J.body().css("overflow","auto");
   }
 }
-window.onresize=function(){setStyle()};

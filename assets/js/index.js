@@ -10,19 +10,7 @@ var articles=[{
   prise_num:0
 }];
 
-
-var c_name=["d-show","d-hide","head-left","head-right",
-  "block","wechat-img","search-input","part","i-title"];
-var i_name=["logo","menuWrapper","setWrapper","main",
-  "footer","footerLink"];
 J.ready(function(){
-  init();
-  initClass();
-})
-function init(){
-  resizeCall(setFooterPos);
-  J.lang("chinese");
-  J.setNoteStyle("gray");
   
   bindData(articles);
   
@@ -37,7 +25,7 @@ function init(){
   J.id("set").event("onclick",function(){
     setSpin(this);
   })
-}
+})
 function bindData(data){
     data.each(function(item){
       bindOneData(item);
@@ -52,7 +40,6 @@ function bindData(data){
     else{
       J.id("list").append(noContent.clone());
     }
-    refreshObjAdaptive(J.id("list"));
 }
 function bindOneData(item){
 	var aitem=J.new("div.a-item");
@@ -87,3 +74,4 @@ function setFooterPos(){
     J.id("footer").removeClass("bottom");
   }
 }
+window.onresize=setFooterPos;

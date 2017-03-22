@@ -27,10 +27,6 @@
   z-index: 10;
   cursor:pointer;
 }
-.cover-block.change{
-  margin: 10px 10px;
-  width:auto;
-}
 
 .display-none{display:none;}
 .text-center{text-align:center;}
@@ -54,9 +50,6 @@
   width:50%;
   margin:0 auto;
   position:relative;
-}
-.input-wrapper.change{
-  width:90%;
 }
 .input-item{
   margin:5px;
@@ -118,4 +111,15 @@
   right: 0;
   text-decoration: underline;
   cursor: pointer;
+}
+
+
+@media screen and (max-width:900px) {
+  .cover-block{
+    margin: 10px 10px;
+    width:auto;
+  }
+  .input-wrapper{
+    width:90%;
+  }
 }

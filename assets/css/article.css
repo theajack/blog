@@ -67,11 +67,6 @@ a:hover{color:#aaa;}
   width:80%;
   margin:0 auto;
 }
-.code.change{
-  width:auto;
-  margin:10px;
-  line-height: 16px;
-}
 #prise{
   margin: 0 auto;
   background-color: #888;
@@ -105,19 +100,12 @@ a:hover{color:#aaa;}
   border-radius: 5px;
 
 }
-.title1.change{
-  font-size: 18px;
-}
 .title2{
   font-size: 20px;
   font-weight: bold;
   margin: 5px 10px;
   border-left: 4px solid #888;
   padding-left: 5px;
-}
-.title2.change{
-  font-size: 15px;
-  padding-top: 2px;
 }
 .title3{
   background: -webkit-linear-gradient(to right, #222, #fff);
@@ -129,10 +117,6 @@ a:hover{color:#aaa;}
   color: #fff;
   font-size: 15px;
   border-radius: 3px;
-}
-.title3.change{
-  font-size: 13px;
-  padding-top: 2px;
 }
 .stress-i,.stress-dark,.stress-bold,.stress-bg{
   margin:0 5px;
@@ -181,9 +165,6 @@ a:hover{color:#aaa;}
   font-family: Microsoft Yahei;
   overflow: auto;
   cursor:text;
-}
-.comment.change{
-  font-size:14px;
 }
 .span-link{
   color:#ddd;
@@ -258,8 +239,6 @@ a:hover{color:#aaa;}
   border-left: 0;
   cursor:pointer;
 }
-.face-box.change{width: 281px;}
-.face-item.change{width: 35px;height: 35px;}
 .button{
   width: 60px;
   height: 30px;
@@ -285,16 +264,12 @@ a:hover{color:#aaa;}
   width:15%;
   float:left;
 }
-.c-user.change{width:25%}
 .c-user-photo{
   width: 60%;
   margin: 5px auto;
   display: block;
   border-radius:50%;
   border: 1px solid #444;
-}
-.c-user-photo.change{
-  width: 90%;
 }
 .c-user-name{
   text-align:center;
@@ -305,7 +280,6 @@ a:hover{color:#aaa;}
   float:left;
   padding:0 10px;
 }
-.c-content.change{width:75%}
 .c-content .ii-block{cursor:pointer;}
 .c-content .ii-block:hover{background-color:#ccc;}
 .c-content .ii-block:active{background-color:#aaa;}
@@ -313,9 +287,6 @@ a:hover{color:#aaa;}
 }
 .c-content-text{
   margin-top:8px;
-}
-.c-content-text.change{
-  margin-top:0;
 }
 .c-content-text .span-link{
   color:#666;
@@ -357,9 +328,6 @@ a:hover{color:#aaa;}
   font-size: 12px;
   cursor:pointer;
 }
-#allComment.change{
-  padding:5px;
-}
 #allComment .block{
   width: 70%;
   height: 96%;
@@ -371,11 +339,6 @@ a:hover{color:#aaa;}
   font-size:18px;    
   float: right;
   cursor: pointer;
-}
-#allComment.change .block{
-  width:100%!important;
-  height:100%!important;
-  margin:0!important;
 }
 /*#allCommentList::-webkit-scrollbar{ width:10px } */
 /*end commentList*/
@@ -395,33 +358,14 @@ a:hover{color:#aaa;}
   width:400px;
   cursor:default;
 }
-.cover-block.change{
-  margin: 160px 10px;
-  width:auto;
-}
 
 .display-none{display:none;}
 .text-center{text-align:center;}
 .div-center{margin:0 auto;}
 /*for adaption*/
 .d-show{display:none;}
-.d-show.change{display:block;}
-.d-hide.change{display:none;}
-.part.change{width:96%;}
-#footer.change{padding:10px 0;}
-.wechat-img.change{  left: -30px;}
-#footerLink.change{font-size:12px;}
-#title.change{font-size:17px;line-height:17px;padding-bottom: 10px;}
 .normal-text,.section{font-size: 20px;}
 .small-text{font-size: 18px;}
-.normal-text.change,.section.change{font-size:15px}
-.small-text.change{font-size: 12px;}
-.code.change{font-size:10px;}
-.head-right.change{
-  margin:10px 5px;
-}
-.block.change{padding:10px;}
-.c-content.change{padding-right:0;}
 
 
 .j-none{visibility:hidden!important;position:absolute!important;display:block!important;}
@@ -505,11 +449,6 @@ ul{
   bottom:0;
   right:0;
 }
-#toolBox.change{
-  background-color:rgba(200,200,200,.6);
-  border-radius:5px;
-  right:5px;
-}
 .tool-item{
   height: 50px;
   width: 50px;
@@ -521,7 +460,73 @@ ul{
   border-radius: 5px;
   cursor: pointer;
 }
-.tool-item.change{
+.tool-item:hover{
+  color:#fff;
+}
+
+@media screen and (max-width:900px) {
+  .code{
+    width:auto;
+    margin:10px;
+    line-height: 16px;
+  }
+  .title1{
+    font-size: 18px;
+  }
+.title2{
+  font-size: 15px;
+  padding-top: 2px;
+}
+.title3{
+  font-size: 13px;
+  padding-top: 2px;
+}
+.comment{
+  font-size:14px;
+}
+.face-box{width: 281px;}
+.face-item{width: 35px;height: 35px;}
+.c-user{width:25%}
+.c-user-photo{
+  width: 90%;
+}
+.c-content{width:75%}
+.c-content-text{
+  margin-top:0;
+}
+#allComment{
+  padding:5px;
+}
+#allComment .block{
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+}
+.cover-block{
+  margin: 160px 10px;
+  width:auto;
+}
+.d-show{display:block;}
+.d-hide{display:none;}
+.part{width:96%;}
+#footer{padding:10px 0;}
+.wechat-img{  left: -30px;}
+#footerLink{font-size:12px;}
+#title{font-size:17px;line-height:17px;padding-bottom: 10px;}
+.normal-text,.section{font-size:15px}
+.small-text{font-size: 12px;}
+.code{font-size:10px;}
+.head-right{
+  margin:10px 5px;
+}
+.block{padding:10px;}
+.c-content{padding-right:0;}
+#toolBox{
+  background-color:rgba(200,200,200,.6);
+  border-radius:5px;
+  right:5px;
+}
+.tool-item{
   height: 30px;
   width: 30px;
   font-size: 20px;
@@ -529,8 +534,4 @@ ul{
   background-color: rgba(0,0,0,.3);
   color: #ccc;
 }
-.tool-item:hover{
-  color:#fff;
 }
-
-
