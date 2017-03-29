@@ -9,6 +9,7 @@ J.ready(function(){
   bindComment();
   bindArticle();
   initFaceBox();
+  setToolBoxPos();
   J.class("wechat-public").event({
     "onmouseover":"J.class('wechat-img').fadeIn()",
     "onmouseleave":"J.class('wechat-img').fadeOut()"

@@ -8,12 +8,20 @@ var articles=[{
   watch_num:0,
   comment_num:0,
   prise_num:0
+},{
+  id:"7",
+  title:"获取汉字的拼音和笔画数的js库",
+  name:"cnchar",
+  date:"2017-03-29",
+  author:"theajack",
+  watch_num:0,
+  comment_num:0,
+  prise_num:0
 }];
 
 J.ready(function(){
   
   bindData(articles);
-  
   jsonp("getAllArticle",function(data){
     J.id("list").empty().html('<div class="block-title">全部文章</div>');
     bindData(data);
