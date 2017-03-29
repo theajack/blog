@@ -101,8 +101,6 @@
 }
 .api-test-input{
   height: 24px;
-  position: relative;
-  top: -5px;
   width: 70%;
   background-color: #ddd;
   outline: none;
@@ -133,79 +131,80 @@
 }
 
 </style>
-<div class="api-item">
-  <div class="api-item-title">.spell()</div>
-  <div class="api-item-text">获取汉字完整拼音</div>
-  <div class="api-content-wrapper">
-    <div class="api-item-ltitle">如何使用</div>
-    <div class="api-content clearfix">
-      "测试".spell()
-      <span class="api-content-result" onclick="this.text('测试'.spell())">查看</span>
+<div class="clearfix"> 
+  <div class="api-item">
+    <div class="api-item-title">.spell()</div>
+    <div class="api-item-text">获取汉字完整拼音</div>
+    <div class="api-content-wrapper">
+      <div class="api-item-ltitle">如何使用</div>
+      <div class="api-content clearfix">
+        "测试".spell()
+        <span class="api-content-result" onclick="this.text('测试'.spell())">查看</span>
+      </div>
+      <div class="api-content clearfix">
+        "测试".spell("up")
+        <span class="api-content-result" onclick="this.text('测试'.spell('up'))">查看</span>
+      </div>
+      <div class="api-content clearfix">
+        "测试".spell("low")
+        <span class="api-content-result" onclick="this.text('测试'.spell('low'))">查看</span>
+      </div>
+      <div class="api-item-text">'upper','lower'都合法;不区分大小写</div>
+      <div class="api-item-text">非汉字会返回原字符串</div>
     </div>
-    <div class="api-content clearfix">
-      "测试".spell("up")
-      <span class="api-content-result" onclick="this.text('测试'.spell('up'))">查看</span>
+    <div class="api-test-wrapper">
+      <div class="api-item-ltitle">尝试一下</div>
+      <input type="text" class="api-test-input" placeholder="请输入汉字"/>
+      <span class="api-test-btn" onclick="this.prev().val(this.prev().val().spell())">获取</span>
     </div>
-    <div class="api-content clearfix">
-      "测试".spell("low")
-      <span class="api-content-result" onclick="this.text('测试'.spell('low'))">查看</span>
-    </div>
-    <div class="api-item-text">'upper','lower'都合法;不区分大小写</div>
-    <div class="api-item-text">非汉字会返回原字符串</div>
   </div>
-  <div class="api-test-wrapper">
-    <div class="api-item-ltitle">尝试一下</div>
-    <input type="text" class="api-test-input" placeholder="请输入汉字"/>
-    <span class="api-test-btn" onclick="this.prev().val(this.prev().val().spell())">获取</span>
-  </div>
-</div>
-<div class="api-item">
-  <div class="api-item-title">.spellFirst()</div>
-  <div class="api-item-text">获取汉字拼音首字母</div>
-  <div class="api-content-wrapper">
-    <div class="api-item-ltitle">如何使用</div>
-    <div class="api-content clearfix">
-      "测试".spellFirst()
-      <span class="api-content-result" onclick="this.text('测试'.spellFirst())">查看</span>
+  <div class="api-item">
+    <div class="api-item-title">.spellFirst()</div>
+    <div class="api-item-text">获取汉字拼音首字母</div>
+    <div class="api-content-wrapper">
+      <div class="api-item-ltitle">如何使用</div>
+      <div class="api-content clearfix">
+        "测试".spellFirst()
+        <span class="api-content-result" onclick="this.text('测试'.spellFirst())">查看</span>
+      </div>
+      <div class="api-content clearfix">
+        "测试".spellFirst("low")
+        <span class="api-content-result" onclick="this.text('测试'.spellFirst('low'))">查看</span>
+      </div>
+      <div style="height:1px"></div>
+      <div class="api-item-text">'lower'合法;不区分大小写</div>
+      <div class="api-item-text">非汉字会返回原字符串</div>
     </div>
-    <div class="api-content clearfix">
-      "测试".spellFirst("low")
-      <span class="api-content-result" onclick="this.text('测试'.spellFirst('low'))">查看</span>
+    <div class="api-test-wrapper">
+      <div class="api-item-ltitle">尝试一下</div>
+      <input type="text" class="api-test-input" placeholder="请输入汉字"/>
+      <span class="api-test-btn" onclick="this.prev().val(this.prev().val().spellFirst())">获取</span>
     </div>
-    <div style="height:1px"></div>
-    <div class="api-item-text">'lower'合法;不区分大小写</div>
-    <div class="api-item-text">非汉字会返回原字符串</div>
   </div>
-  <div class="api-test-wrapper">
-    <div class="api-item-ltitle">尝试一下</div>
-    <input type="text" class="api-test-input" placeholder="请输入汉字"/>
-    <span class="api-test-btn" onclick="this.prev().val(this.prev().val().spellFirst())">获取</span>
-  </div>
-</div>
-<div class="api-item">
-  <div class="api-item-title">.stroke()</div>
-  <div class="api-item-text">获取汉字笔画数</div>
+  <div class="api-item">
+    <div class="api-item-title">.stroke()</div>
+    <div class="api-item-text">获取汉字笔画数</div>
 
-  <div class="api-content-wrapper">
-    <div class="api-item-ltitle">如何使用</div>
-    <div class="api-content clearfix">
-      "测试".stroke()
-      <span class="api-content-result" onclick="this.text('测试'.stroke())">查看</span>
+    <div class="api-content-wrapper">
+      <div class="api-item-ltitle">如何使用</div>
+      <div class="api-content clearfix">
+        "测试".stroke()
+        <span class="api-content-result" onclick="this.text('测试'.stroke())">查看</span>
+      </div>
+      <div class="api-item-text">非汉字会返回原字符串长度</div>
     </div>
-    <div class="api-item-text">非汉字会返回原字符串长度</div>
-  </div>
-  <div class="api-test-wrapper">
-    <div class="api-item-ltitle">尝试一下</div>
-    <input type="text" class="api-test-input" placeholder="请输入汉字"/>
-    <span class="api-test-btn" onclick="this.prev().val(this.prev().val().stroke())">获取</span>
+    <div class="api-test-wrapper">
+      <div class="api-item-ltitle">尝试一下</div>
+      <input type="text" class="api-test-input" placeholder="请输入汉字"/>
+      <span class="api-test-btn" onclick="this.prev().val(this.prev().val().stroke())">获取</span>
+    </div>
   </div>
 </div>
-
 <div class="title1">6.参考自</div>
-<div class="section">
+<div class="title2">
 <span class="stress-bold link" onclick="J.open('https://my.oschina.net/tommyfok/blog/202412')">1.https://my.oschina.net/tommyfok/blog/202412</span>
 </div>
-<div class="section">
+<div class="title2">
 <span class="stress-bold link" onclick="J.open('http://www.sharejs.com/js/math/170')">2.http://www.sharejs.com/js/math/170</span>
 </div>
       
