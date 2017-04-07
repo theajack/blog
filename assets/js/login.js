@@ -66,16 +66,16 @@ J.ready(function(){
   J.body().append(J.new("div").html(htmlCode).initValid());
   initLoginEvent();
   if(initLogin()){
-    S(".login .text").text(u_nickname);
+    S(".login .text").txt(u_nickname);
   }else{
     J.class("user-center").hide();
     J.class("logout").hide();
   }
 });
 function initLoginEvent(){
-  J.class("login").event("onclick",openLogin);
-  J.class("regist").event("onclick",openRegist);
-  J.class("logout").event("onclick",logout);
+  J.class("login").clk(openLogin);
+  J.class("regist").clk(openRegist);
+  J.class("logout").clk(logout);
 }
 function closeLogin(){
   closeCover(J.class("login-cover").clear());
@@ -84,11 +84,11 @@ function closeRegist(){
   closeCover(J.class("regist-cover").clear());
 }
 function openLogin(){
-  J.class("login-cover").select("[jet-name=method]").text("login");
+  J.class("login-cover").select("[jet-name=method]").txt("login");
   openCover(J.class("login-cover"));
 }
 function openRegist(){
-  J.class("regist-cover").select("[jet-name=method]").text("regist");
+  J.class("regist-cover").select("[jet-name=method]").txt("regist");
   openCover(J.class("regist-cover"));
 }
 function regist(){
@@ -117,7 +117,7 @@ function login(){
     jsonp(data,function(res){
       if(res){
         closeLogin();
-        S(".login .text").text(data.nickname);
+        S(".login .text").txt(data.nickname);
         J.class("user-center").show();
         J.class("logout").show();
         initUserInfo(data);
@@ -132,15 +132,15 @@ function logout(){
   setSpin(J.id("set"));
   u_id=d_uid;
   u_nickname=d_nickname;
-  J.select("[jet-name=u_id]").text(d_uid);
-  S(".login .text").text("登录");
+  J.select("[jet-name=u_id]").txt(d_uid);
+  S(".login .text").txt("登录");
   J.show("已退出登录");
 }
 function initUserInfo(data){
   data.method="getUserInfo";
   jsonp(data,function(res){
     setUserCookie(res[0]);
-    J.select("[jet-name=u_id]").text(res[0].id);
+    J.select("[jet-name=u_id]").txt(res[0].id);
   },null,false);
 }
 function setUserCookie(json){
@@ -162,7 +162,7 @@ function initLogin(){
     }
     jsonp(data,function(res){
       if(res){
-        S(".login .text").text(data.nickname);
+        S(".login .text").txt(data.nickname);
         J.class("user-center").show();
         J.class("logout").show();
         initUserInfo(data);

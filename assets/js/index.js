@@ -30,9 +30,10 @@ J.ready(function(){
     "onmouseover":"J.class('wechat-img').fadeIn()",
     "onmouseleave":"J.class('wechat-img').fadeOut()"
   });
-  J.id("set").event("onclick",function(){
+  J.id("set").clk(function(){
     setSpin(this);
   })
+  setFooterPos();
 })
 function bindData(data){
     data.each(function(item){
@@ -71,7 +72,7 @@ function bindOneData(item){
 function geneInfo(content,classname,icon){
 	var info=J.new("div."+classname);
 		var icon=J.new("span.glyphicon.glyphicon-"+icon);
-		var text=J.new("span").text(content);
+		var text=J.new("span").txt(content);
 	info.append([icon,text]);
 	return info;
 }

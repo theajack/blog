@@ -14,11 +14,11 @@ J.ready(function(){
     "onmouseover":"J.class('wechat-img').fadeIn()",
     "onmouseleave":"J.class('wechat-img').fadeOut()"
   });
-  J.id("set").event("onclick",function(){
+  J.id("set").clk(function(){
     setSpin(this);
   })
-  J.jetName("a_id").text(a_id);
-  J.jetName("u_id").text(u_id);
+  J.jetName("a_id").txt(a_id);
+  J.jetName("u_id").txt(u_id);
   addWatch();
 })
 function bindZoom(obj){
@@ -52,13 +52,13 @@ function loadText(){
       $('div.pinch-zoom').each(function () {
         new RTP.PinchZoom($(this), {});
       });
-      text.findTag("img").event("onclick","bindZoom(this)");
+      text.findTag("img").clk("bindZoom(this)");
     }else{
       text.findTag("pre").attr("contenteditable",true);
     }
-    J.name("description").attr("content",J.id("hideDes").text());
-    J.name("keywords").attr("content",J.id("hideKeyWords").text());
-    J.id("title").text(J.id("hideTitle").text());
+    J.name("description").attr("content",J.id("hideDes").txt());
+    J.name("keywords").attr("content",J.id("hideKeyWords").txt());
+    J.id("title").txt(J.id("hideTitle").txt());
   });
 }
 function setToolBoxPos(){
@@ -80,7 +80,7 @@ function addWatch(){
     id:a_id
   },function(data){
     if(data){
-      J.class("watch-num").text(parseInt(J.class("watch-num").text())+1);
+      J.class("watch-num").txt(parseInt(J.class("watch-num").txt())+1);
     }
   },null,false);
 }
@@ -97,13 +97,13 @@ function bindArticle(){
     if(data[0].star==1){
       J.id("articleStar").removeClass("display-none");
     }
-    J.class("prise-num").text(data[0].prise_num);
+    J.class("prise-num").txt(data[0].prise_num);
     J.tag("title").text=data[0].title+"--(Blog theajack)";
   },null,false);
 }
 function initFaceBox(){
   J.class("face-box").each(function(box){
-    box.prev().event("onclick",function(){
+    box.prev().clk(function(){
       if(this.attr("data-show")=="true"){
         this.attr("data-show","false");
         this.next().fadeOut(null,'fast');
@@ -116,7 +116,7 @@ function initFaceBox(){
       box.append(J.new("img.face-item[src=assets/images/rabbit/rabbit ("+i+").gif][rt="+i+"][onclick=addFace(this)]"));
     }
   });
-  J.class("c-link").event("onclick",function(){
+  J.class("c-link").clk(function(){
     var obj=this;
     J.input({
       title:"添加链接",
@@ -129,10 +129,10 @@ function initFaceBox(){
         data[1]=data[0];
       }
       var area=obj.parent().next();
-      area.append(J.new("span.span-link[contenteditable=false][onclick=J.jump('"+data[0]+"')]").text(data[1])).html(area.html()+"&nbsp;");
+      area.append(J.new("span.span-link[contenteditable=false][onclick=J.jump('"+data[0]+"')]").txt(data[1])).html(area.html()+"&nbsp;");
     });
   });
-  J.class("c-image").event("onclick",develop);
+  J.class("c-image").clk(develop);
 }
 function addFace(obj){
   obj.parent(2).next().append(J.new("img.rabbit[src="+obj.attr("src")+"][rt="+obj.attr("rt")+"]"));
@@ -222,28 +222,28 @@ function bindOneComment(data,index,isAll){
   if(index==0){c_item.addClass("no-border");}
     var c_user=J.new("div.c-user");
       var c_photo=J.new("img.c-user-photo[src="+J.checkArg(data.photo,defaultPhoto)+"]");
-      var c_name=J.new("div.c-user-name.small-text").text(data.nickname);
+      var c_name=J.new("div.c-user-name.small-text").txt(data.nickname);
     c_user.append([c_photo,c_name]);
     var c_content=J.new("div.c-content");
-      var c_info=J.new("div.c-content-info.small-text").text(J.checkArg(toDatetime(data.time),"没有日期"));
+      var c_info=J.new("div.c-content-info.small-text").txt(J.checkArg(toDatetime(data.time),"没有日期"));
       var c_text=J.new("div.c-content-text.normal-text").html(decodeContent(data.content));
       
       var c_cp=J.new("div.clearfix");
         var c_cp_comment=J.new("div.ii-block[onclick=priseComment(this,"+isAll+")]");
           var c_cp_cicon=J.new("span.glyphicon.glyphicon-thumbs-up");
-          var c_cp_cnum=J.new("span").text(data.prise_num);
+          var c_cp_cnum=J.new("span").txt(data.prise_num);
         c_cp_comment.append([c_cp_cicon,c_cp_cnum]);
         var c_cp_prise=J.new("div.ii-block[onclick=openReply(this)][bc_id="+data.id+"]");
           var c_cp_picon=J.new("span.glyphicon.glyphicon-comment");
-          var c_cp_pnum=J.new("span").text(data.reply_num);
+          var c_cp_pnum=J.new("span").txt(data.reply_num);
         c_cp_prise.append([c_cp_picon,c_cp_pnum]);
       c_cp.append([c_cp_comment,c_cp_prise]);
       
     c_content.append([c_info,c_text,c_cp]);
     if(data.reply!=undefined&&data.reply.length>0){
       var c_reply=J.new("div.c-reply");
-        var c_rb_title=J.new("div.block-title").text("回复列表");
-          var c_rb_switch=J.new("span.reply-switch").text("收起").event("onclick","switchReply(this)");
+        var c_rb_title=J.new("div.block-title").txt("回复列表");
+          var c_rb_switch=J.new("span.reply-switch").txt("收起").clk("switchReply(this)");
         c_rb_title.append(c_rb_switch);
       c_reply.append(c_rb_title);
         var c_rb_itemwrapper=J.new("div");
@@ -278,8 +278,8 @@ function geneReply(item,i){
   if(i==0){c_r_item.addClass("no-border");}
     var c_r_title=J.new("div.c-r-title");
       var c_r_photo=J.new("img.c-r-photo[src="+J.checkArg(item.photo,defaultPhoto)+"]");
-      var c_r_name=J.new("span.c-r-name.small-text").text(item.nickname);
-      var c_r_time=J.new("span.c-r-name.small-text").text(toDatetime(item.time));
+      var c_r_name=J.new("span.c-r-name.small-text").txt(item.nickname);
+      var c_r_time=J.new("span.c-r-name.small-text").txt(toDatetime(item.time));
     c_r_title.append([c_r_photo,c_r_name,c_r_time]);
     var c_r_content=J.new("div.c-r-content.small-text").html(decodeContent(item.content));
   return c_r_item.append([c_r_title,c_r_content]);
@@ -298,7 +298,7 @@ function addComment(obj){
   for(var k=i;k<i+10;k++){
     var reply=all_data[k];
     if(reply==undefined){
-      obj.event("onclick","closeAllComment()").text("已无更多 (点击关闭)");
+      obj.clk("closeAllComment()").txt("已无更多 (点击关闭)");
       break;
     }else{
       obj.before(bindOneComment(reply,null,true));
@@ -326,7 +326,7 @@ function comment(){//评论文章
     data.content=codeContent(data.content);
     jsonp(data,function(res){
       if(res){
-        J.class("comment-num").text(parseInt(J.class("comment-num").text())+1);
+        J.class("comment-num").txt(parseInt(J.class("comment-num").txt())+1);
         J.id("comment").select("[jet-name=content]").empty();
         refreshComment();
       }
@@ -378,15 +378,15 @@ function prise(){//点赞文章
     u_id:u_id
   },function(data){
     if(data){
-      J.class("prise-num").text(parseInt(J.class("prise-num").text())+1);
+      J.class("prise-num").txt(parseInt(J.class("prise-num").txt())+1);
     }
   },"点赞文章");
 }
 function openReply(obj){
   var list=J.id("floatComment");
   openCover(list);
-  list.select("[jet-name=bc_id]").text(obj.attr("bc_id"));
-  list.findClass("reply-nickname").text(obj.parent(2).prev().child(1).text());
+  list.select("[jet-name=bc_id]").txt(obj.attr("bc_id"));
+  list.findClass("reply-nickname").txt(obj.parent(2).prev().child(1).txt());
 }
 function reply(obj,isAll){//评论回复
   showNoLogin();
@@ -404,10 +404,10 @@ function reply(obj,isAll){//评论回复
           data.content=decodeContent(data.content);
           data.time=getNowDate();
           data.nickname=u_nickname;
-          var bc_id=obj.next().text();
+          var bc_id=obj.next().txt();
           var list=S("#allCommentList [bc_id='"+bc_id+"']").parent().next();
           var num=list.prev().child(1).child(1);
-          num.text(parseInt(num.text())+1);
+          num.txt(parseInt(num.txt())+1);
           list.child(0).removeClass("no-border");
           list.child(1).prepend(geneReply(data,0));
         }
@@ -424,15 +424,15 @@ function priseComment(obj,isAll){//点赞回复
     u_id:u_id
   },function(data){
     if(data){
-      var num=parseInt(obj.child(1).text())+1;
-      obj.child(1).text(num);
+      var num=parseInt(obj.child(1).txt())+1;
+      obj.child(1).txt(num);
       if(isAll)
-        J.id("commentList").select("[bc_id='"+bc_id+"']").prev().child(1).text(num);
+        J.id("commentList").select("[bc_id='"+bc_id+"']").prev().child(1).txt(num);
     }
   },"点赞评论");
 }
 function switchReply(obj){
-  obj.text((obj.text()=="收起")?"展开":"收起");
+  obj.txt((obj.txt()=="收起")?"展开":"收起");
   obj.parent().next().slideToggle();
 }
 window.onresize=setToolBoxPos;
