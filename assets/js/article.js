@@ -14,7 +14,7 @@ J.ready(function(){
     "onmouseover":"J.class('wechat-img').fadeIn()",
     "onmouseleave":"J.class('wechat-img').fadeOut()"
   });
-  J.id("set").clk(function(){
+  J.id("setWrapper").clk(function(){
     setSpin(this);
   })
   J.jetName("a_id").txt(a_id);
