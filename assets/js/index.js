@@ -33,7 +33,7 @@ J.ready(function(){
   J.id("set").clk(function(){
     setSpin(this);
   })
-  setFooterPos();
+  //setFooterPos();
 })
 function bindData(data){
     data.each(function(item){
