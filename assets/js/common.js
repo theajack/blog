@@ -7,7 +7,7 @@ var noContent=J.new("div.no-content").html('\
     <span>暂无内容</span>');
 J.ready(function(){
   J.lang("chinese");
-  J.setNoteStyle("gray");
+  J.noteStyle("gray");
 });
 function jsonp(json,callback,text,needShow){
   if(needShow!=false)

@@ -2,7 +2,7 @@
 var a_id,a_name;
 var defaultPhoto="assets/images/defaultPhoto.png";
 J.ready(function(){
-  var data=J.getUrlPara()
+  var data=J.urlParam()
   a_id=data.id;
   a_name=data.name;
   loadText();
