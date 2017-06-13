@@ -46,7 +46,7 @@ a:hover{color:#aaa;}
   max-width:98%;
 }
 .code pre{
-  background-color: #444;
+  /*background-color: #444;
   border-radius: 5px;
   border-color: #000;
   color: #fff;
@@ -56,7 +56,7 @@ a:hover{color:#aaa;}
   letter-spacing: .3px;
   font-family: Microsoft Yahei;
   overflow: auto;
-  margin:10px 0;
+  margin:10px 0;*/
 }
 .section,.image,.code{
   margin:10px;
@@ -473,65 +473,65 @@ ul{
   .title1{
     font-size: 18px;
   }
-.title2{
-  font-size: 15px;
-  padding-top: 2px;
-}
-.title3{
-  font-size: 13px;
-  padding-top: 2px;
-}
-.comment{
-  font-size:14px;
-}
-.face-box{width: 281px;}
-.face-item{width: 35px;height: 35px;}
-.c-user{width:25%}
-.c-user-photo{
-  width: 90%;
-}
-.c-content{width:75%}
-.c-content-text{
-  margin-top:0;
-}
-#allComment{
-  padding:5px;
-}
-#allComment .block{
-  width:100%!important;
-  height:100%!important;
-  margin:0!important;
-}
-.cover-block{
-  margin: 160px 10px;
-  width:auto;
-}
-.d-show{display:block;}
-.d-hide{display:none;}
-.part{width:96%;}
-#footer{padding:10px 0;}
-.wechat-img{  left: -30px;}
-#footerLink{font-size:12px;}
-#title{font-size:17px;line-height:17px;padding-bottom: 10px;}
-.normal-text,.section{font-size:15px}
-.small-text{font-size: 12px;}
-.code{font-size:10px;}
-.head-right{
-  margin:10px 5px;
-}
-.block{padding:10px;}
-.c-content{padding-right:0;}
-#toolBox{
-  background-color:rgba(200,200,200,.6);
-  border-radius:5px;
-  right:5px;
-}
-.tool-item{
-  height: 30px;
-  width: 30px;
-  font-size: 20px;
-  padding: 5px;
-  background-color: rgba(0,0,0,.3);
-  color: #ccc;
-}
+  .title2{
+    font-size: 15px;
+    padding-top: 2px;
+  }
+  .title3{
+    font-size: 13px;
+    padding-top: 2px;
+  }
+  .comment{
+    font-size:14px;
+  }
+  .face-box{width: 281px;}
+  .face-item{width: 35px;height: 35px;}
+  .c-user{width:25%}
+  .c-user-photo{
+    width: 90%;
+  }
+  .c-content{width:75%}
+  .c-content-text{
+    margin-top:0;
+  }
+  #allComment{
+    padding:5px;
+  }
+  #allComment .block{
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+  }
+  .cover-block{
+    margin: 160px 10px;
+    width:auto;
+  }
+  .d-show{display:block;}
+  .d-hide{display:none;}
+  .part{width:96%;}
+  #footer{padding:10px 0;}
+  .wechat-img{  left: -30px;}
+  #footerLink{font-size:12px;}
+  #title{font-size:17px;line-height:17px;padding-bottom: 10px;}
+  .normal-text,.section{font-size:15px}
+  .small-text{font-size: 12px;}
+  .code{font-size:10px;}
+  .head-right{
+    margin:10px 5px;
+  }
+  .block{padding:10px;}
+  .c-content{padding-right:0;}
+  #toolBox{
+    background-color:rgba(200,200,200,.6);
+    border-radius:5px;
+    right:5px;
+  }
+  .tool-item{
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    padding: 5px;
+    background-color: rgba(0,0,0,.3);
+    color: #ccc;
+  }
 }

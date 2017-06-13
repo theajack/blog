@@ -2,10 +2,12 @@
 var a_id,a_name;
 var defaultPhoto="assets/images/defaultPhoto.png";
 J.ready(function(){
-  var data=J.urlParam()
-  a_id=data.id;
-  a_name=data.name;
-  loadText();
+  if(J.id("text").html().trim()==""){
+    var data=J.urlParam()
+    a_id=data.id;
+    a_name=data.name;
+    loadText();
+  }
   bindComment();
   bindArticle();
   initFaceBox();
