@@ -61,6 +61,7 @@ function loadText(){
     J.name("description").attr("content",J.id("hideDes").txt());
     J.name("keywords").attr("content",J.id("hideKeyWords").txt());
     J.id("title").txt(J.id("hideTitle").txt());
+    Jcode.init();
   });
 }
 function setToolBoxPos(){
