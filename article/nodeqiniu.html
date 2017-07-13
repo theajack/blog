@@ -64,12 +64,12 @@ npm install qiniu -g
 <div class="code">
   <editor width="100%" height="auto" disabled buttons="fontSizeUp;fontSizeDown;fullScreen;fix;copy">
 function _getToken(){
-  var accessKey = "LMC1xnbJedj4NIx7HshdL1gi41G34wQ1JaQawyWx";
-  var secretKey = "8EADIMtedv6HbaX87rzn6x235qMLdPjfTffBuEfr";
+  var accessKey = "xxxxxxxxxxxxxxxxxxxxxxx";//来源请参考2中的accessKey
+  var secretKey = "xxxxxxxxxxxxxxxxxxxxxxx";//来源请参考2中的secretKey
   var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
   var options = {
-    scope: "theajack",
-    expires: 7200
+    scope: "theajack",//存储空间的名字
+    expires: 7200//失效时间，单位为s
   };
   var putPolicy = new qiniu.rs.PutPolicy(options);
   var uploadToken=putPolicy.uploadToken(mac);
@@ -88,19 +88,19 @@ node后端接受到前端的ajax请求之后将生成的token返回给前端，�
 </div>
 <div class="code">
   <editor width="100%" height="auto" disabled buttons="fontSizeUp;fontSizeDown;fullScreen;fix;copy">
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <title>上传测试</title>
-  </head>
-  <body>
-    <input type="file" id="file" />
-    <input type="button" onclick="uploadTest()" value="上传"/>
-    <script type="text/javascript">
-    </script>
-  </body>
-</html>
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;meta charset='utf-8'>
+    &lt;title>上传测试&lt;/title>
+  &lt;/head>
+  &lt;body>
+    &lt;input type="file" id="file" />
+    &lt;input type="button" onclick="uploadTest()" value="上传"/>
+    &lt;script type="text/javascript">
+    &lt;/script>
+  &lt;/body>
+&lt;/html>
   </editor>
 </div>
 <div class="section">
@@ -116,7 +116,7 @@ function uploadTest(){
 function upload(call){
   getUptoken(function(token){
     var fileObj = $("#file")[0].files[0]; // js 获取文件对象
-    var url = "http://up-z2.qiniu.com/"; // 接收上传文件的后台地址
+    var url = "http://up-z2.qiniu.com/"; // 接收上传文件的后台地址 华南地区的z2，其他请参考2中的上传地址
     var form = new FormData(); // FormData 对象
     form.append("file", fileObj); // 文件对象
     form.append("token", token); //装入从后端获取的token
@@ -147,7 +147,7 @@ function upload(call){
           if(data.constructor==String){
             data=JSON.parse(data);
           }
-          call("http://ot07vtiyp.bkt.clouddn.com/"+data.key);//之前也说过，外链地址+key 就是资源的访问地址
+          call(url+data.key);//url为2中提到的外链地址，之前也说过，外链地址+key 就是资源的访问地址
         }else{
           alert("error")
         }
