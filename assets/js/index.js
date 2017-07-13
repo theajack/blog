@@ -17,6 +17,15 @@ var articles=[{
   watch_num:0,
   comment_num:0,
   prise_num:0
+},{
+  id:"10",
+  title:"基于Nodejs的七牛云上传资源解决方案",
+  name:"nodeqiniu",
+  date:"2017-07-13",
+  author:"theajack",
+  watch_num:0,
+  comment_num:0,
+  prise_num:0
 }];
 
 J.ready(function(){
