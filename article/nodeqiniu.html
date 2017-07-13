@@ -104,7 +104,7 @@ node后端接受到前端的ajax请求之后将生成的token返回给前端，�
   </editor>
 </div>
 <div class="section">
-然后在script插入如下js代码,这里笔者使用了jQuery的ajax方法，读者请自行引入jQuery。
+然后在script插入如下js代码,获取upToken笔者使用了jQuery的ajax方法，读者请自行引入jQuery。至于为什么上传部分没有使用jQuery，是因为经过多种尝试，发现jQuery的上传很难捕捉到上传进度，故使用xmlHttpReque代替，反正jQuery源码也是使用这个实现ajax的。
 </div>
 <div class="code">
   <editor width="100%" height="auto" disabled buttons="fontSizeUp;fontSizeDown;fullScreen;fix;copy">
