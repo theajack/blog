@@ -19,6 +19,7 @@ J.ready(function(){
   J.id("setWrapper").clk(function(){
     setSpin(this);
   })
+  J.id("zoomImageCover").clk("J.id('zoomImageCover').fadeOut()")
   J.jetName("a_id").txt(a_id);
   J.jetName("u_id").txt(u_id);
   addWatch();
