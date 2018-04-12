@@ -245,6 +245,15 @@ body{
   float: left;
   cursor:pointer;
 }
+.link-img.hover{
+  transform: scale(1);
+  transition: transform .5s linear;
+  -webkit-transition: -webkit-transform .5s linear;
+}
+.link-img.hover:hover{
+  transform: scale(5);
+  box-shadow:#aaa 0 0 1px 1px;
+}
 .link-img.little{
   margin: 5px 4%;
 }
