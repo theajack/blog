@@ -51,7 +51,7 @@ function jsonp(json,callback,text,needShow){
     },
     time:20000,
     timeout:function(err){
-      J.showWait(err.message,"error");
+      J.show(err.message,"error");
     },
     message:"请求超时"
   });
