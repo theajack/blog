@@ -41,6 +41,7 @@ a:hover{color:#aaa;}
 }
 .image{
   text-align:center;
+  text-indent: 0;
 }
 .image img{
   max-width:98%;
