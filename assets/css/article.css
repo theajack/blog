@@ -464,7 +464,9 @@ ul{
 .tool-item:hover{
   color:#fff;
 }
-
+.indent-none{
+  text-indent:0!important;
+}
 @media screen and (max-width:900px) {
   .code{
     width:auto;
@@ -534,5 +536,8 @@ ul{
     padding: 5px;
     background-color: rgba(0,0,0,.3);
     color: #ccc;
+  }
+  .block{
+    padding: 10px!important;
   }
 }
