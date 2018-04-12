@@ -1,9 +1,18 @@
 
 var articles=[{
-  id:"3",
-  title:"jsonp跨域的客户端服务器搭建",
-  name:"jsonp",
-  date:"2017-03-16",
+  id:"12",
+  title:"微信小游戏开发之获取微信好友数据",
+  name:"smallgame",
+  date:"2018-04-12",
+  author:"theajack",
+  watch_num:0,
+  comment_num:0,
+  prise_num:0
+},{
+  id:"10",
+  title:"基于Nodejs的七牛云上传资源解决方案",
+  name:"nodeqiniu",
+  date:"2017-07-13",
   author:"theajack",
   watch_num:0,
   comment_num:0,
@@ -18,10 +27,10 @@ var articles=[{
   comment_num:0,
   prise_num:0
 },{
-  id:"10",
-  title:"基于Nodejs的七牛云上传资源解决方案",
-  name:"nodeqiniu",
-  date:"2017-07-13",
+  id:"3",
+  title:"jsonp跨域的客户端服务器搭建",
+  name:"jsonp",
+  date:"2017-03-16",
   author:"theajack",
   watch_num:0,
   comment_num:0,
@@ -33,7 +42,7 @@ J.ready(function(){
   bindData(articles);
   jsonp("getAllArticle",function(data){
     J.id("list").empty().html('<div class="block-title">全部文章</div>');
-    bindData(data);
+    bindData(data.reverse());
   },null,false);
   J.class("wechat-public").event({
     "onmouseover":"J.class('wechat-img').fadeIn()",

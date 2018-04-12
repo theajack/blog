@@ -69,12 +69,12 @@ function setToolBoxPos(){
   if(J.width()>900){
     J.id("toolBox").css({
       right:(J.width()*0.15-60)+"px",
-      bottom:((J.height()-162)/2)+"px"
+      bottom:((J.height()-212)/2)+"px"
     })
   }else{
     J.id("toolBox").css({
       right:"5px",
-      bottom:((J.height()-102)/2)+"px"
+      bottom:((J.height()-135)/2)+"px"
     })
   }
 }
