@@ -398,6 +398,8 @@ function reply(obj,isAll){//评论回复
   if(!data.content){
     J.show("评论不可为空","warn");
   }else{
+    data.method="replyComment";
+    data.u_id=u_id;
     data.content=codeContent(data.content);
     jsonp(data,function(res){
       if(res){
