@@ -74,10 +74,10 @@ function bindOneData(item){
 		var info=J.new("div.i-info.clearfix");
 		info.append([
 			geneInfo(toDate(item.date),"ii-block","calendar"),
-			geneInfo(item.author,"ii-block","user").addClass("d-hide mobile"),
-			geneInfo(item.watch_num,"ii-block","eye-open"),
-			geneInfo(item.comment_num,"ii-block","comment"),
-			geneInfo(item.prise_num,"ii-block","thumbs-up")
+			geneInfo(item.author,"ii-block","user").addClass("d-hide mobile")
+			//geneInfo(item.watch_num,"ii-block","eye-open"),
+			//geneInfo(item.comment_num,"ii-block","comment"),
+			//geneInfo(item.prise_num,"ii-block","thumbs-up")
 		]);
 		if(item.top==1){info.append(geneInfo("置顶","ii-block darker","eject"))};
 		if(item.star==1){info.append(geneInfo("加精","ii-block darker","star"))};
