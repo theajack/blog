@@ -333,9 +333,27 @@ body{
 
 
 /*end footer*/
-
+.info-warn{
+  margin: 15px;
+  background-color: #ffcf93;
+  margin-bottom: 0;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #888;
+  border-radius: 5px;
+  text-align: center;
+}
+.info-warn.detail{
+  margin: 0;
+  margin-top: 15px;
+}
 @media screen and (max-width:900px) {
   
+  .info-warn{
+    margin: 0 3px;
+    margin-top: 8px;
+    font-size: 13px;
+  }
   .i-title{
     font-size: 18px;
   }

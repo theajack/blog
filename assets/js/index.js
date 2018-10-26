@@ -5,36 +5,36 @@ var articles=[{
   name:"smallgame",
   date:"2018-04-12",
   author:"theajack",
-  watch_num:0,
-  comment_num:0,
-  prise_num:0
+  watch_num:'xx',
+  comment_num:'xx',
+  prise_num:'xx'
 },{
   id:"10",
   title:"基于Nodejs的七牛云上传资源解决方案",
   name:"nodeqiniu",
   date:"2017-07-13",
   author:"theajack",
-  watch_num:0,
-  comment_num:0,
-  prise_num:0
+  watch_num:'xx',
+  comment_num:'xx',
+  prise_num:'xx'
 },{
   id:"7",
   title:"获取汉字的拼音和笔画数的js库",
   name:"cnchar",
   date:"2017-03-29",
   author:"theajack",
-  watch_num:0,
-  comment_num:0,
-  prise_num:0
+  watch_num:'xx',
+  comment_num:'xx',
+  prise_num:'xx'
 },{
   id:"3",
   title:"jsonp跨域的客户端服务器搭建",
   name:"jsonp",
   date:"2017-03-16",
   author:"theajack",
-  watch_num:0,
-  comment_num:0,
-  prise_num:0
+  watch_num:'xx',
+  comment_num:'xx',
+  prise_num:'xx'
 }];
 
 J.ready(function(){
@@ -74,10 +74,10 @@ function bindOneData(item){
 		var info=J.new("div.i-info.clearfix");
 		info.append([
 			geneInfo(toDate(item.date),"ii-block","calendar"),
-			geneInfo(item.author,"ii-block","user").addClass("d-hide mobile")
-			//geneInfo(item.watch_num,"ii-block","eye-open"),
-			//geneInfo(item.comment_num,"ii-block","comment"),
-			//geneInfo(item.prise_num,"ii-block","thumbs-up")
+			geneInfo(item.author,"ii-block","user").addClass("d-hide mobile"),
+			geneInfo(item.watch_num,"ii-block","eye-open"),
+			geneInfo(item.comment_num,"ii-block","comment"),
+			geneInfo(item.prise_num,"ii-block","thumbs-up")
 		]);
 		if(item.top==1){info.append(geneInfo("置顶","ii-block darker","eject"))};
 		if(item.star==1){info.append(geneInfo("加精","ii-block darker","star"))};
