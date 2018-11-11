@@ -1,0 +1,119 @@
+
+<jh id="hideDes">一个一本正经的js异步排序算法</jh>
+<jh id="hideKeyWords">js排序算法，异步排序算法</jh>
+<jh id="hideTitle">一个一本正经的js异步排序算法</jh>
+<div class="section">
+  很久没更博客了，首先祝大家双11剁手快乐。然后今天来一波骚操作。
+</div>
+<div class="image"><img src="assets/images/emoji/表演.gif"/></div>
+<div class="section">
+  前一段时间笔者偶然看到一个排序算法，着实大吃一惊，想不到世间居然还有脑回路如此轻奇怪之猿。
+  该算法号称睡眠排序算法，笔者给它起个名字叫做线程排序算法。不多比比，上代码：
+</div>
+<div class="image"><img src="assets/images/asyncsort/sort-java.png"/></div>
+<div class="section">
+  利用多线程让程序睡眠所需排序数的时间来排序，也就是说最小的数最先打印，最大的数最后打印，
+  这波操作可以说是相当稳妥，据说写了这段代码的小哥，当即就被老板辞退。这我就要替小哥喊不平，
+  人凭本事排的序，凭什么炒人家啊！<img src="assets/images/rabbit/rabbit (4).gif"/>
+</div>
+<div class="image"><img src="assets/images/emoji/稳.gif"/></div>
+<div class="title1">一本正经的正文</div>
+<div class="section">
+  作为一个js深度粉的猿，笔者在痛惜小哥怀才不遇的同时，想用js实现以下这波操作来致敬一下小哥<img src="assets/images/rabbit/rabbit (20).gif"/>。
+  然鹅，js没有多线程啊！不过也难不倒本人，定时器用上就解决问题了，上代码：
+</div>
+<div class="image"><img src="assets/images/asyncsort/async-sort.png"/></div>
+<editor width="100%" height="auto" disabled buttons="fontSizeUp;fontSizeDown;fullScreen;fix;copy">
+function asyncSort(arr){
+  arr.forEach(item => {
+    setTimeout(()=>{
+      console.log(item)
+    },item)
+  });
+}</editor>  
+<div class="section">
+  运行结果：
+</div>
+<div class="image"><img src="assets/images/asyncsort/r1.png"/></div>
+<div class="section">
+  结果出其意料的好有木有，缩减一下换行，代码完全可以控制在一行以内（虽然js排序本来也就只需要一行 arr.sort()）。
+  笔者决定给这个算法起一个名字高大上的名字，额...，就叫异步排序算法（async sort）吧！再择个黄道吉日可以发个论文了！<img src="assets/images/rabbit/rabbit (39).gif"/>
+</div>
+<div class="image"><img src="assets/images/emoji/上天.gif"/></div>
+<div class="section">
+  再来分析一下时间复杂度和空间复杂度，空间复杂度O(1)，很棒！至于时间复杂度...，要什么时间复杂度，快乐就行！！！
+</div>
+<div class="image"><img src="assets/images/emoji/没毛病.gif"/></div>
+<div class="section">
+  似乎写道这里文章也就差不多结束了。但是笔者怎么感谢做一个如此短小的..作者，强行加一波戏，优化一下代码：
+</div>
+<div class="title1">一本正经的优化</div>
+<div class="title2">1.先从解决负数和0开始吧</div>
+<div class="section">
+  看代码也能看出来，这个算法不支持负数啊，至于0，笔者试验之后发现有些情况下也会出现问题。
+  笔者解决思路就是把所有的执行时间都加上最小的数的绝对值+1，看代码就明白了：
+</div>
+<div class="image"><img src="assets/images/asyncsort/async-sort2.png"/></div>
+<editor width="100%" height="auto" disabled buttons="fontSizeUp;fontSizeDown;fullScreen;fix;copy">
+function asyncSort(arr){
+  var min=Math.min.apply(null,arr)
+  var addition=(min>0)?0:(-min+1);
+  arr.forEach(item => {
+    setTimeout(()=>{
+      console.log(item)
+    },item+addition)
+  });
+}</editor>  
+<div class="section">
+  运行结果：
+</div>
+<div class="image"><img src="assets/images/asyncsort/r2.png"/></div>
+<div class="image"><img src="assets/images/emoji/天秀.jpg"/></div>
+<div class="title2">2.优化输出</div>
+<div class="section">
+  有同学站起来发言：那你这也不算排序啊，挨个输出算什么鬼！！
+</div>
+<div class="image"><img src="assets/images/emoji/独秀请坐.jpg"/></div>
+<div class="section">
+  这个同学很有潜力，那我们来在不改变空间复杂度的前提下来优化一下输出，让算法执行完的时候输出排好序的数组。
+  思路就是每执行一个定时器回调函数的时候，就把对应的数移到数组尾部，来看代码：
+</div>
+<div class="image"><img src="assets/images/asyncsort/async-sort3.png"/></div>
+<editor width="100%" height="auto" disabled buttons="fontSizeUp;fontSizeDown;fullScreen;fix;copy">
+function asyncSort(arr){
+  var min=Math.min.apply(null,arr)
+  var addition=(min>0)?0:(-min+1)
+  var num=0;
+  arr.forEach(item => {
+    setTimeout(()=>{
+      arr.push(item);
+      arr.shift();
+      if(++num==arr.length){
+        console.log(arr);
+      }
+    },item+addition)
+  });
+}</editor>
+<div class="section">
+  运行结果：
+</div>
+<div class="image"><img src="assets/images/asyncsort/r3.png"/></div>
+<div class="title2">3.最牛*的时间复杂度优化来啦</div>
+<div class="section">
+  经过笔者苦思冥想、绞尽脑汁、废寝忘食地深思熟虑之后，........，我想说：
+</div>
+<div class="image"><img src="assets/images/emoji/吹头发.gif"/></div>
+<div class="section">
+  还要什么自行车，欢乐就完了。。。。
+</div>
+<div class="section">
+  (要是有同学真有优化方案，欢迎指教：theajack@qq.com)
+</div>
+<div class="image"><img src="assets/images/emoji/安排.jpg"/></div>
+<div class="title1">一本正经的广告</div>
+<div class="section">
+  笔者搞了个微信公众号 “优雅的javascript” （正在考虑要不要改名为 风骚的javascript）。欢迎同学们点一点关注哈，
+  还有笔者的个人公众号：“theajack”。扫码或是长按识别一下二维码关注。谢谢。。。
+</div>
+<div class="image"><img src="assets/images/js.jpg"/></div>
+<div class="image"><img src="assets/images/wechat_qrcode.jpg"/></div>

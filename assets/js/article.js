@@ -1,4 +1,6 @@
 
+
+
 var a_id,a_name;
 var defaultPhoto="assets/images/defaultPhoto.png";
 J.ready(function(){

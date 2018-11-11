@@ -1,5 +1,14 @@
 
 var articles=[{
+  id:"13",
+  title:"一个一本正经的js异步排序算法",
+  name:"asyncsort",
+  date:"2018-11-11",
+  author:"theajack",
+  watch_num:'xx',
+  comment_num:'xx',
+  prise_num:'xx'
+},{
   id:"12",
   title:"微信小游戏开发之获取微信好友数据",
   name:"smallgame",
