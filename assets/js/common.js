@@ -1,7 +1,7 @@
 var isMobile=true;
 //var url="http://localhost:50866/theajack/default.aspx";
 //var url="http://localhost:1010/"
-var url="http://15h97945z7.iok.la";
+var url="https://theajack.goho.co";
 var noContent=J.new("div.no-content").html('\
     <img src="assets/images/rabbit/rabbit (26).gif" rt="26" onclick="addFace(this)">\
     <span>暂无内容</span>');
